@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ontario Tourism Experiences — One Province, Many Worlds</title>
+  <meta name="description" content="Explore 24 curated tourism experiences across Ontario, Canada: nature, culture, flavours and adventure." data-i18n-attr="content:meta.home">
+  <meta name="theme-color" content="#17352B">
+
+  <!-- Early language flag: avoids a flash of English when Spanish is stored.
+       Same snippet on every page. -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var l = (location.search.match(/[?&]lang=(es|en)/) || [])[1] || localStorage.getItem('ote-lang');
+        if (l === 'es') { d.lang = 'es'; d.classList.add('i18n-pending'); }
+      } catch (e) {}
+      setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="image" href="images/home/hero-algonquin-autumn.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/language.js" defer></script>
+  <script src="js/experiences.js" defer></script>
+  <script src="js/favourites.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body id="top" data-page="home" data-page-title="title.home" data-nav="transparent">
+
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+  <!-- Shared header (rendered by js/main.js) -->
+  <div data-component="site-header"></div>
+
+  <noscript><p class="noscript">This experience needs JavaScript enabled. / Esta experiencia necesita JavaScript activado.</p></noscript>
+
+  <main id="main">
+
+    <!-- =====================================================
+         01 · HERO
+         ===================================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__media">
+        <img src="images/home/hero-algonquin-autumn.webp" width="1920" height="1280"
+             alt="Autumn forest on the shore of Lake of Two Rivers, Algonquin Provincial Park"
+             data-i18n-attr="alt:home.hero.alt" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <p class="hero__eyebrow eyebrow" data-i18n="home.hero.eyebrow">Ontario, Canada · 24 curated experiences</p>
+
+        <h1 class="hero__title" id="hero-title">
+          <span class="sr-only" data-i18n="site.name">Ontario Tourism Experiences</span>
+          <span class="hero__word" aria-hidden="true">
+            <span style="--i:0">O</span><span style="--i:1">N</span><span style="--i:2">T</span><span style="--i:3">A</span><span style="--i:4">R</span><span style="--i:5">I</span><span style="--i:6">O</span>
+          </span>
+        </h1>
+
+        <div class="hero__row">
+          <p class="hero__tagline">
+            <span data-i18n="home.hero.line1">Not just a destination.</span>
+            <em data-i18n="home.hero.line2">A world to explore.</em>
+          </p>
+          <p class="hero__pillars" data-i18n="home.hero.pillars">Nature · Culture · Flavours · Adventure</p>
+          <a class="btn hero__cta" href="#concept">
+            <span class="btn__label"><span data-i18n="home.hero.cta">Discover</span></span>
+            <span class="arrow arrow--down" aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div class="hero__bottom">
+          <a class="scroll-cue" href="#concept" tabindex="-1" aria-hidden="true">
+            <span class="scroll-cue__line"></span>
+            <span data-i18n="home.hero.scroll">Scroll</span>
+          </a>
+          <p class="hero__concept" data-i18n="site.concept">One province, many worlds</p>
+          <p class="photo-caption"><span data-i18n="common.photo">Photo</span> — Lake of Two Rivers, Algonquin Provincial Park</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         02 · CONCEPT — One province, many worlds
+         ===================================================== -->
+    <section class="concept" id="concept" aria-labelledby="concept-title">
+      <!-- Diptych: the wild side and the city side of the same province -->
+      <div class="concept__stage">
+        <figure class="concept__half concept__half--nature reveal-img">
+          <img src="images/nature/hero-indian-head-cove.webp" width="1920" height="1280" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.intro.altNature" data-depth="-0.06" style="object-position: 30% center">
+          <figcaption class="photo-caption">Bruce Peninsula National Park</figcaption>
+        </figure>
+        <figure class="concept__half concept__half--city reveal-img" style="--d:1">
+          <img src="images/culture/hero-toronto-skyline-night.webp" width="1920" height="1280" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.intro.altCity" data-depth="-0.06" style="object-position: 62% center">
+          <figcaption class="photo-caption">Toronto</figcaption>
+        </figure>
+        <span class="concept__big" aria-hidden="true" data-depth="0.12">24</span>
+
+        <div class="concept__text">
+          <p class="eyebrow reveal" data-i18n="home.intro.eyebrow">The concept</p>
+          <h2 class="display-xl reveal reveal--title" style="--d:1" id="concept-title" data-i18n-html="home.intro.title">One province,<br><em>many worlds.</em></h2>
+          <div class="concept__copy">
+            <p class="lede reveal" style="--d:2" data-i18n="home.intro.text"></p>
+            <p class="reveal" style="--d:3" data-i18n="home.intro.text2"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Six regions: one photograph per region -->
+      <div class="regions">
+        <p class="regions__title reveal" data-i18n="home.intro.regionsTitle">Six regions, one journey</p>
+        <ol class="regions__list" data-stagger>
+          <li>
+            <figure class="regions__media"><img src="images/culture/opener-toronto-skyline.webp" width="1920" height="1271" loading="lazy" decoding="async" alt="" style="object-position: 28% center"></figure>
+            <span class="regions__num">01</span><span data-i18n="region.toronto"></span>
+          </li>
+          <li>
+            <figure class="regions__media"><img src="images/home/nature-niagara-falls.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="" style="object-position: 40% center"></figure>
+            <span class="regions__num">02</span><span data-i18n="region.niagara"></span>
+          </li>
+          <li>
+            <figure class="regions__media"><img src="images/home/map-bruce-peninsula.webp" width="1600" height="1067" loading="lazy" decoding="async" alt=""></figure>
+            <span class="regions__num">03</span><span data-i18n="region.bruce"></span>
+          </li>
+          <li>
+            <figure class="regions__media"><img src="images/adventure/opener-blue-mountain-view.webp" width="1920" height="1440" loading="lazy" decoding="async" alt=""></figure>
+            <span class="regions__num">04</span><span data-i18n="region.blue"></span>
+          </li>
+          <li>
+            <figure class="regions__media"><img src="images/nature/opener-algonquin-sunset.webp" width="1920" height="1280" loading="lazy" decoding="async" alt=""></figure>
+            <span class="regions__num">05</span><span data-i18n="region.algonquin"></span>
+          </li>
+          <li>
+            <figure class="regions__media"><img src="images/home/region-stratford-avon.webp" width="1200" height="900" loading="lazy" decoding="async" alt=""></figure>
+            <span class="regions__num">06</span><span data-i18n="region.stratford"></span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         03 · FOUR WORLDS — categories
+         ===================================================== -->
+    <section class="worlds" id="worlds" aria-labelledby="worlds-title">
+      <header class="section-head">
+        <div>
+          <p class="eyebrow reveal" data-i18n="home.worlds.eyebrow">Four worlds to discover</p>
+          <h2 class="display-lg reveal reveal--title" style="--d:1" id="worlds-title" data-i18n-html="home.worlds.title"></h2>
+        </div>
+        <p class="lede section-head__lede reveal" style="--d:3" data-i18n="home.worlds.lede"></p>
+      </header>
+
+      <!-- 01 NATURE -->
+      <article class="world world--nature" aria-labelledby="world-nature">
+        <span class="world__num" aria-hidden="true" data-depth="0.14">01</span>
+        <a class="world__media reveal-img" href="nature.html" tabindex="-1" aria-hidden="true">
+          <img src="images/home/nature-niagara-falls.webp" width="1600" height="1200" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.nature.alt" data-depth="-0.06">
+          <span class="world__badge"><span data-badge data-i18n="common.explore">Explore</span></span>
+          <span class="world__caption" data-i18n="home.worlds.nature.caption"></span>
+        </a>
+        <div class="world__stage">
+          <figure class="world__stage-main reveal-img" style="--d:1">
+            <img src="images/nature/algonquin-autumn-lake.webp" width="1600" height="1067" loading="lazy" decoding="async"
+                 alt="" data-i18n-attr="alt:home.worlds.nature.shot3b">
+            <figcaption class="world__shot-cap">Algonquin Provincial Park</figcaption>
+          </figure>
+          <figure class="world__stage-detail reveal-img" style="--d:3" data-depth="0.05">
+            <img src="images/home/nature-sauble-beach.webp" width="1000" height="682" loading="lazy" decoding="async"
+                 alt="" data-i18n-attr="alt:home.worlds.nature.shot1" style="object-position: 65% center">
+            <figcaption class="world__shot-cap">Sauble Beach</figcaption>
+          </figure>
+        </div>
+
+        <div class="world__body reveal">
+          <p class="world__meta"><span class="world__index">01</span><span data-i18n="common.expCount" data-i18n-vars='{"n":6}'></span></p>
+          <h3 class="world__title" id="world-nature" data-i18n="cat.nature">Nature</h3>
+          <p class="world__subtitle" data-i18n="section.nature"></p>
+          <p class="world__text" data-i18n="home.worlds.nature.text"></p>
+          <ul class="world__subs" data-stagger>
+            <li><a href="nature.html#water-beaches"><span class="world__subs-num">1.1</span><span data-i18n="sub.water"></span><span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="nature.html#parks-landscapes"><span class="world__subs-num">1.2</span><span data-i18n="sub.parks"></span><span class="arrow" aria-hidden="true"></span></a></li>
+          </ul>
+          <a class="link-arrow" href="nature.html"><span data-i18n="home.worlds.nature.cta">Explore Nature</span><span class="arrow" aria-hidden="true"></span></a>
+        </div>
+      </article>
+
+      <!-- PHOTO BRIDGE — from the islands (Nature) to the city (Culture) -->
+      <section class="bleed bleed--bridge" aria-labelledby="bridge-title">
+        <figure class="bleed__media reveal-img">
+          <img src="images/home/bridge-toronto-islands-ferry.webp" width="1920" height="1285" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.bridge.alt" data-depth="-0.08">
+        </figure>
+        <div class="bleed__content">
+          <p class="eyebrow reveal" data-i18n="home.bridge.eyebrow">From the islands to the city</p>
+          <p class="display-lg reveal reveal--title" style="--d:1" id="bridge-title" data-i18n-html="home.bridge.title">A short ferry ride,<br><em>two different worlds.</em></p>
+        </div>
+        <p class="photo-caption bleed__caption"><span data-i18n="common.photo">Photo</span> — <span data-i18n="home.bridge.caption">Toronto skyline from the Ward’s Island ferry</span></p>
+      </section>
+
+      <!-- 02 CULTURE -->
+      <article class="world world--culture" aria-labelledby="world-culture">
+        <span class="world__num" aria-hidden="true" data-depth="0.14">02</span>
+        <figure class="world__shot world__shot--cntower reveal-img" style="--d:0" data-depth="0.03">
+          <img src="images/home/culture-cn-tower-vertical.webp" width="900" height="1418" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.culture.shot4">
+          <figcaption class="world__shot-cap">CN Tower</figcaption>
+        </figure>
+        <figure class="world__detail reveal-img" style="--d:2" data-depth="0.04">
+          <img src="images/home/culture-casa-loma.webp" width="820" height="871" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.culture.shot2">
+          <figcaption class="world__shot-cap">Casa Loma</figcaption>
+        </figure>
+        <a class="world__media reveal-img" href="culture.html" tabindex="-1" aria-hidden="true">
+          <img src="images/home/culture-royal-ontario-museum.webp" width="1000" height="613" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.culture.shot3" data-depth="-0.06">
+          <span class="world__badge"><span data-badge data-i18n="common.explore">Explore</span></span>
+          <span class="world__caption">Royal Ontario Museum</span>
+        </a>
+        <figure class="world__media-2 reveal-img" style="--d:1">
+          <img src="images/home/culture-nathan-phillips-square.webp" width="1000" height="667" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.culture.shot1">
+          <figcaption class="world__shot-cap">Nathan Phillips Square</figcaption>
+        </figure>
+
+        <div class="world__body reveal">
+          <p class="world__meta"><span class="world__index">02</span><span data-i18n="common.expCount" data-i18n-vars='{"n":6}'></span></p>
+          <h3 class="world__title" id="world-culture" data-i18n="cat.culture">Culture</h3>
+          <p class="world__subtitle" data-i18n="section.culture"></p>
+          <p class="world__text" data-i18n="home.worlds.culture.text"></p>
+          <ul class="world__subs" data-stagger>
+            <li><a href="culture.html#landmarks"><span class="world__subs-num">2.1</span><span data-i18n="sub.landmarks"></span><span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="culture.html#museums-art"><span class="world__subs-num">2.2</span><span data-i18n="sub.museums"></span><span class="arrow" aria-hidden="true"></span></a></li>
+          </ul>
+          <a class="link-arrow" href="culture.html"><span data-i18n="home.worlds.culture.cta">Explore Culture</span><span class="arrow" aria-hidden="true"></span></a>
+        </div>
+      </article>
+
+      <!-- PHOTO BRIDGE — from the city to the markets and the vineyards -->
+      <section class="bleed bleed--taste" aria-labelledby="bridge-taste-title">
+        <figure class="bleed__media reveal-img">
+          <img src="images/flavours/opener-niagara-grapes.webp" width="2400" height="800" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.bridge2.alt" data-depth="-0.08" style="object-position: 62% center">
+        </figure>
+        <div class="bleed__content">
+          <p class="eyebrow reveal" data-i18n="home.bridge2.eyebrow">A province you can taste</p>
+          <p class="display-lg reveal reveal--title" style="--d:1" id="bridge-taste-title" data-i18n-html="home.bridge2.title">From historic markets<br><em>to wine country.</em></p>
+        </div>
+        <p class="photo-caption bleed__caption"><span data-i18n="common.photo">Photo</span> — Niagara-on-the-Lake</p>
+      </section>
+
+      <!-- 03 FLAVOURS -->
+      <article class="world world--flavours" aria-labelledby="world-flavours">
+        <span class="world__num" aria-hidden="true" data-depth="0.14">03</span>
+        <a class="world__media reveal-img" href="food.html" tabindex="-1" aria-hidden="true">
+          <img src="images/home/flavours-st-lawrence-market.webp" width="1600" height="1094" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.flavours.alt" data-depth="-0.06">
+          <span class="world__badge"><span data-badge data-i18n="common.explore">Explore</span></span>
+          <span class="world__caption" data-i18n="home.worlds.flavours.caption"></span>
+        </a>
+        <figure class="world__detail reveal-img" style="--d:2" data-depth="0.04">
+          <img src="images/flavours/peameal-bacon-sandwich.webp" width="800" height="600" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.flavours.shot6">
+          <figcaption class="world__shot-cap">Peameal bacon · St. Lawrence Market</figcaption>
+        </figure>
+        <div class="world__pair">
+          <figure class="reveal-img" style="--d:1">
+            <img src="images/home/flavours-kensington-market.webp" width="1000" height="668" loading="lazy" decoding="async"
+                 alt="" data-i18n-attr="alt:home.worlds.flavours.shot2">
+            <figcaption class="world__shot-cap">Kensington Market</figcaption>
+          </figure>
+          <figure class="reveal-img" style="--d:2">
+            <img src="images/flavours/stratford-chocolate-trail.webp" width="1200" height="800" loading="lazy" decoding="async"
+                 alt="" data-i18n-attr="alt:home.worlds.flavours.shot4" style="object-position: 64% center">
+            <figcaption class="world__shot-cap">Stratford Chocolate Trail</figcaption>
+          </figure>
+        </div>
+        <div class="world__body reveal">
+          <p class="world__meta"><span class="world__index">03</span><span data-i18n="common.expCount" data-i18n-vars='{"n":6}'></span></p>
+          <h3 class="world__title" id="world-flavours" data-i18n="cat.flavours">Flavours</h3>
+          <p class="world__subtitle" data-i18n="section.food"></p>
+          <p class="world__text" data-i18n="home.worlds.flavours.text"></p>
+          <ul class="world__subs" data-stagger>
+            <li><a href="food.html#markets"><span class="world__subs-num">3.1</span><span data-i18n="sub.markets"></span><span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="food.html#local-flavours"><span class="world__subs-num">3.2</span><span data-i18n="sub.flavours"></span><span class="arrow" aria-hidden="true"></span></a></li>
+          </ul>
+          <a class="link-arrow" href="food.html"><span data-i18n="home.worlds.flavours.cta">Explore Flavours</span><span class="arrow" aria-hidden="true"></span></a>
+        </div>
+      </article>
+
+      <!-- PHOTO BRIDGE — from the table to the thrill (Flavours → Adventure) -->
+      <section class="bleed bleed--thrill" aria-labelledby="bridge-thrill-title">
+        <figure class="bleed__media reveal-img">
+          <img src="images/home/bridge-leviathan-climb.webp" width="1920" height="1440" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.bridge3.alt" data-depth="-0.08" style="object-position: center 30%">
+        </figure>
+        <div class="bleed__content">
+          <p class="eyebrow reveal" data-i18n="home.bridge3.eyebrow">After the feast</p>
+          <p class="display-lg reveal reveal--title" style="--d:1" id="bridge-thrill-title" data-i18n-html="home.bridge3.title">Now, hold on<br><em>tight.</em></p>
+        </div>
+        <p class="photo-caption bleed__caption"><span data-i18n="common.photo">Photo</span> — Leviathan, Canada’s Wonderland</p>
+      </section>
+
+      <!-- 04 ADVENTURE (full bleed — grows to the edges while scrolling) -->
+      <article class="world world--adventure" aria-labelledby="world-adventure">
+        <a class="world__media" href="entertainment.html" tabindex="-1" aria-hidden="true" data-scrub>
+          <img src="images/home/adventure-blue-mountain.webp" width="1600" height="1202" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.adventure.alt" data-depth="-0.05">
+          <span class="world__badge"><span data-badge data-i18n="common.explore">Explore</span></span>
+          <span class="world__caption" data-i18n="home.worlds.adventure.caption"></span>
+        </a>
+        <span class="world__num" aria-hidden="true" data-depth="0.1">04</span>
+        <figure class="world__shot world__shot--wonderland reveal-img" style="--d:0" data-depth="0.05">
+          <img src="images/home/adventure-canadas-wonderland.webp" width="720" height="960" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.adventure.shot3">
+          <figcaption class="world__shot-cap">Canada’s Wonderland</figcaption>
+        </figure>
+        <figure class="world__shot world__shot--aquarium reveal-img" style="--d:1" data-depth="-0.03">
+          <img src="images/home/adventure-ripleys-aquarium.webp" width="1000" height="667" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.adventure.shot1">
+          <figcaption class="world__shot-cap">Ripley’s Aquarium of Canada</figcaption>
+        </figure>
+        <figure class="world__shot world__shot--zoo reveal-img" style="--d:2" data-depth="0.07">
+          <img src="images/adventure/toronto-zoo.webp" width="860" height="1290" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.adventure.shot4" style="object-position: 50% 30%">
+          <figcaption class="world__shot-cap">Toronto Zoo</figcaption>
+        </figure>
+        <div class="world__body reveal">
+          <p class="world__meta"><span class="world__index">04</span><span data-i18n="common.expCount" data-i18n-vars='{"n":6}'></span></p>
+          <h3 class="world__title" id="world-adventure" data-i18n="cat.adventure">Adventure</h3>
+          <p class="world__subtitle" data-i18n="section.adventure"></p>
+          <p class="world__text" data-i18n="home.worlds.adventure.text"></p>
+          <ul class="world__subs" data-stagger>
+            <li><a href="entertainment.html#family-attractions"><span class="world__subs-num">4.1</span><span data-i18n="sub.family"></span><span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="entertainment.html#seasonal-adventure"><span class="world__subs-num">4.2</span><span data-i18n="sub.seasonal"></span><span class="arrow" aria-hidden="true"></span></a></li>
+          </ul>
+          <a class="link-arrow" href="entertainment.html"><span data-i18n="home.worlds.adventure.cta">Explore Adventure</span><span class="arrow" aria-hidden="true"></span></a>
+        </div>
+      </article>
+    </section>
+
+    <!-- =====================================================
+         04 · MARQUEE — the 24 experiences (proper names)
+         ===================================================== -->
+    <section class="marquee" data-marquee>
+      <h2 class="sr-only" data-i18n="home.marquee.label">The 24 experiences of this guide</h2>
+      <div class="marquee__inner">
+        <ul class="marquee__track">
+          <li><sup>01</sup>Niagara Falls</li>
+          <li><sup>02</sup>Sauble Beach</li>
+          <li><sup>03</sup>Toronto Islands</li>
+          <li><sup>04</sup>Algonquin Provincial Park</li>
+          <li><sup>05</sup>Bruce Peninsula National Park</li>
+          <li><sup>06</sup>Scenic Caves Nature Adventures</li>
+          <li><sup>07</sup>CN Tower</li>
+          <li><sup>08</sup>Casa Loma</li>
+          <li><sup>09</sup>Nathan Phillips Square</li>
+          <li><sup>10</sup>Royal Ontario Museum</li>
+          <li><sup>11</sup>Art Gallery of Ontario</li>
+          <li><sup>12</sup>Hockey Hall of Fame</li>
+          <li><sup>13</sup>St. Lawrence Market</li>
+          <li><sup>14</sup>Kensington Market</li>
+          <li><sup>15</sup>Distillery Historic District</li>
+          <li><sup>16</sup>Niagara Wine Country</li>
+          <li><sup>17</sup>Stratford Chocolate Trail</li>
+          <li><sup>18</sup>Apple Pie Trail</li>
+          <li><sup>19</sup>Canada’s Wonderland</li>
+          <li><sup>20</sup>Ripley’s Aquarium of Canada</li>
+          <li><sup>21</sup>Toronto Zoo</li>
+          <li><sup>22</sup>Blue Mountain Resort</li>
+          <li><sup>23</sup>Niagara Parks Butterfly Conservatory</li>
+          <li><sup>24</sup>Treetop Trekking at Horseshoe Resort</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         05 · FIND YOUR ONTARIO — promo
+         ===================================================== -->
+    <section class="fyo" id="find-your-ontario" aria-labelledby="fyo-title">
+      <div class="fyo__bg" aria-hidden="true">
+        <img src="images/home/quiz-ragged-lake.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="">
+      </div>
+      <span class="fyo__mark" aria-hidden="true" data-depth="0.1">?</span>
+
+      <div class="fyo__content">
+        <p class="eyebrow eyebrow--accent reveal"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="home.fyo.eyebrow">Interactive experience</span></p>
+        <h2 class="display-xl reveal reveal--title" style="--d:1" id="fyo-title" data-i18n-html="home.fyo.title"></h2>
+        <p class="fyo__lead reveal" style="--d:2" data-i18n="home.fyo.text"></p>
+        <p class="fyo__text reveal" style="--d:3" data-i18n="home.fyo.text2"></p>
+
+        <dl class="fyo__meta" data-stagger>
+          <div><dt data-i18n="home.fyo.m1">Questions</dt><dd>07</dd></div>
+          <div><dt data-i18n="home.fyo.m2">Experiences</dt><dd>24</dd></div>
+          <div><dt data-i18n="home.fyo.m3">Personal match</dt><dd>01</dd></div>
+        </dl>
+
+        <a class="btn btn--large btn--glow reveal" style="--d:4" href="find-your-ontario.html">
+          <span class="btn__label"><span data-i18n="home.fyo.cta">Find Your Ontario</span></span>
+          <span class="arrow" aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="fyo__preview reveal" style="--d:2">
+        <div class="teaser-ghost" aria-hidden="true" data-question-cycle="home.fyo.nextQuestion,home.fyo.q4,home.fyo.q5,home.fyo.q6,home.fyo.q7">
+          <span class="teaser__step">03 / 07</span>
+          <p class="teaser__question" data-i18n="home.fyo.nextQuestion"></p>
+        </div>
+
+        <div class="teaser" data-quiz-teaser role="group" data-i18n-attr="aria-label:home.fyo.previewLabel">
+          <div class="teaser__top">
+            <span class="teaser__label" data-i18n="home.fyo.preview">Preview</span>
+            <span class="teaser__step">02 / 07</span>
+          </div>
+          <div class="teaser__progress" aria-hidden="true"><span></span></div>
+
+          <p class="teaser__question" data-i18n="home.fyo.question">What would your perfect day look like?</p>
+
+          <div class="teaser__options" data-stagger>
+            <button type="button" class="teaser-option" aria-pressed="false"><span class="teaser-option__key">A</span><span data-i18n="home.fyo.opt1"></span></button>
+            <button type="button" class="teaser-option" aria-pressed="false"><span class="teaser-option__key">B</span><span data-i18n="home.fyo.opt2"></span></button>
+            <button type="button" class="teaser-option" aria-pressed="false"><span class="teaser-option__key">C</span><span data-i18n="home.fyo.opt3"></span></button>
+            <button type="button" class="teaser-option" aria-pressed="false"><span class="teaser-option__key">D</span><span data-i18n="home.fyo.opt4"></span></button>
+            <button type="button" class="teaser-option" aria-pressed="false"><span class="teaser-option__key">E</span><span data-i18n="home.fyo.opt5"></span></button>
+          </div>
+
+          <p class="teaser__hint" aria-live="polite">
+            <a href="find-your-ontario.html"><span data-i18n="home.fyo.hint"></span><span class="arrow" aria-hidden="true"></span></a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         06 · MAP INTRO
+         ===================================================== -->
+    <section class="map-intro" id="explore-map" aria-labelledby="map-title">
+      <div class="map-intro__content">
+        <p class="eyebrow reveal" data-i18n="home.map.eyebrow">Explore Ontario</p>
+        <h2 class="display-xl reveal reveal--title" style="--d:1" id="map-title" data-i18n-html="home.map.title"></h2>
+        <p class="lede reveal" style="--d:2" data-i18n="home.map.text"></p>
+
+        <ul class="stats" data-stagger>
+          <li><span class="stats__num" data-count="24" data-pad="2">24</span><span class="stats__label" data-i18n="home.map.s1">Experiences</span></li>
+          <li><span class="stats__num" data-count="6" data-pad="2">06</span><span class="stats__label" data-i18n="home.map.s2">Regions</span></li>
+          <li><span class="stats__num" data-count="1" data-pad="2">01</span><span class="stats__label" data-i18n="home.map.s3">Province</span></li>
+        </ul>
+        <p class="stats__caption reveal" style="--d:3" data-i18n="home.map.caption">Selected Ontario destinations</p>
+
+        <a class="btn btn--light reveal" style="--d:4" href="map.html">
+          <span class="btn__label"><span data-i18n="home.map.cta">Explore Map</span></span>
+          <span class="arrow" aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <!-- Schematic regional map: positions derived from real lat/long (approx.) -->
+      <div class="region-map reveal-img" role="group" data-i18n-attr="aria-label:home.map.panelLabel">
+        <div class="region-map__plot" data-stagger="fade">
+          <svg class="region-map__route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <polyline class="route-draw" pathLength="1" points="65,70 72.5,90 25.5,81 15,30 47.5,43 87.5,8.3" />
+            <polyline class="route-dash" points="65,70 72.5,90 25.5,81 15,30 47.5,43 87.5,8.3" />
+          </svg>
+
+          <span class="lake-label" style="left:4%; top:60%" data-i18n="lake.huron"></span>
+          <span class="lake-label" style="left:31%; top:21%" data-i18n="lake.georgian"></span>
+          <span class="lake-label" style="left:84%; top:78%" data-i18n="lake.ontario"></span>
+          <span class="lake-label" style="left:36%; top:99%" data-i18n="lake.erie"></span>
+
+          <a class="region-dot region-dot--xl" href="map.html?region=toronto" style="left:65%; top:70%">
+            <span class="region-dot__pin" aria-hidden="true"></span>
+            <span class="region-dot__label"><strong data-i18n="region.torontoShort"></strong><em data-i18n="common.expCount" data-i18n-vars='{"n":13}'></em></span>
+          </a>
+          <a class="region-dot" href="map.html?region=niagara" style="left:72.5%; top:90%">
+            <span class="region-dot__pin" aria-hidden="true"></span>
+            <span class="region-dot__label"><strong data-i18n="region.niagara"></strong><em data-i18n="common.expCount" data-i18n-vars='{"n":3}'></em></span>
+          </a>
+          <a class="region-dot" href="map.html?region=bruce" style="left:15%; top:30%">
+            <span class="region-dot__pin" aria-hidden="true"></span>
+            <span class="region-dot__label"><strong data-i18n="region.bruce"></strong><em data-i18n="common.expCount" data-i18n-vars='{"n":2}'></em></span>
+          </a>
+          <a class="region-dot region-dot--lg" href="map.html?region=blue-mountains" style="left:47.5%; top:43%">
+            <span class="region-dot__pin" aria-hidden="true"></span>
+            <span class="region-dot__label"><strong data-i18n="region.blue"></strong><em data-i18n="common.expCount" data-i18n-vars='{"n":4}'></em></span>
+          </a>
+          <a class="region-dot region-dot--label-left" href="map.html?region=algonquin" style="left:87.5%; top:8.3%">
+            <span class="region-dot__pin" aria-hidden="true"></span>
+            <span class="region-dot__label"><strong data-i18n="region.algonquin"></strong><em data-i18n="common.expCount" data-i18n-vars='{"n":1}'></em></span>
+          </a>
+          <a class="region-dot" href="map.html?region=stratford" style="left:25.5%; top:81%">
+            <span class="region-dot__pin" aria-hidden="true"></span>
+            <span class="region-dot__label"><strong data-i18n="region.stratford"></strong><em data-i18n="common.expCount" data-i18n-vars='{"n":1}'></em></span>
+          </a>
+        </div>
+        <p class="region-map__note" data-i18n="home.map.schematic">Schematic view · not to scale</p>
+        <span class="region-map__compass" aria-hidden="true">N</span>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         07 · PLAN — discreet entry to the planning pages
+         ===================================================== -->
+    <section class="plan-band" aria-labelledby="plan-band-title">
+      <div class="plan-band__text">
+        <p class="eyebrow eyebrow--accent reveal"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="home.plan.eyebrow">Ready to go?</span></p>
+        <h2 class="display-md reveal reveal--title" style="--d:1" id="plan-band-title" data-i18n-html="home.plan.title"></h2>
+      </div>
+      <div class="plan-band__links reveal" style="--d:2">
+        <p data-i18n="home.plan.text"></p>
+        <a class="btn btn--light" href="plan-your-trip.html"><span class="btn__label"><span data-i18n="nav.plan">Plan Your Trip</span></span><span class="arrow" aria-hidden="true"></span></a>
+        <ul>
+          <li><a class="link-arrow" href="seasons.html"><span data-i18n="nav.seasons">Ontario by Season</span><span class="arrow" aria-hidden="true"></span></a></li>
+          <li><a class="link-arrow" href="travel-guide.html"><span data-i18n="nav.guide">Travel Guide</span><span class="arrow" aria-hidden="true"></span></a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Photo credits for this page (inserted into the footer) -->
+  <template id="page-credits">
+    <li><a href="https://commons.wikimedia.org/wiki/File:Fall_Colors_at_Algonquin_Provincial_Park,_Canada_-_Autumn_on_Lake_of_Two_Rivers_(29648245373).jpg" target="_blank" rel="noopener">Tony Webster</a> — CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Bruce_Peninsula_National_Park_cliffs.jpg" target="_blank" rel="noopener">The Cosmonaut</a> — CC BY-SA 2.5 CA</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Canadian_Falls_(Horseshoe_Falls)_and_the_Hornblower_Niagara_Cruises_boat;_Niagara_Falls.JPG" target="_blank" rel="noopener">Thomaswm</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:St_Lawrence_Market_Toronto_2010.jpg" target="_blank" rel="noopener">Alexandre Moreau</a> — CC BY-SA 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Blue_Mountain_Ontario_at_night_(landscape).jpg" target="_blank" rel="noopener">Makeworldpedia</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Ragged_Lake_mirror.jpg" target="_blank" rel="noopener">Wllewis</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Sauble_Beach,_Ontario_(Lake_Huron).jpg" target="_blank" rel="noopener">Peter K Burian</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Algonquin_Canoe_Lake.jpg" target="_blank" rel="noopener">Sarthkr</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Kensington_Market_Toronto_August_2017_04.jpg" target="_blank" rel="noopener">Arild Vågen</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Dangerous_Lagoon_-_Sharks-9.jpg" target="_blank" rel="noopener">RipleysAquaCA</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Leviathan_descending_hill.jpg" target="_blank" rel="noopener">Jeremy Thompson</a> — CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Toronto_Skyline_from_Ward%27s_Island_Ferry_(19745155876).jpg" target="_blank" rel="noopener">Lord of the Wings</a> — CC BY-SA 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Toronto_-_ON_-_Toronto_Harbourfront7.jpg" target="_blank" rel="noopener">Wladyslaw</a> — CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Chocolate_Barr%27s_Candies,_Stratford,_Ontario,_2025-08-04_03.jpg" target="_blank" rel="noopener">Chris Woodrich</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Indian_Head_Cove,_Bruce_National_Park,_May_2018.jpg" target="_blank" rel="noopener">Jaimie Snelgrove</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Toronto_Skyline_from_Polson_Pier_(5461949752).jpg" target="_blank" rel="noopener">Allen McGregor</a> — CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Toronto_on_a_summer_day.jpg" target="_blank" rel="noopener">Benson Kua</a> — CC BY-SA 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:View_From_Blue_Mountain_4.jpg" target="_blank" rel="noopener">XeresNelro</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Sunset_in_Algolquin_Provincial_Park.jpg" target="_blank" rel="noopener">Maksim Sokolov</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Bridge,_Avon_River,_Stratford,_Ontario_(21651644568).jpg" target="_blank" rel="noopener">Ken Lund</a> — CC BY-SA 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Wikivoyage_banner_wines_of_ontario_3.jpg" target="_blank" rel="noopener">Graham</a> — CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Leviathan_ascending_(2).jpg" target="_blank" rel="noopener">Jason Zhang</a> — CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Orangutan_Toronto_Zoo_2292.jpg" target="_blank" rel="noopener">ImagePerson</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:A_small_lake_in_Algonquin_Provincial_Park.jpg" target="_blank" rel="noopener">Maksim Sokolov (Algonquin)</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Royal_Ontario_Museum_in_Fall_2021.jpg" target="_blank" rel="noopener">Maksim Sokolov (ROM)</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Nathan_Philips_Square_Toronto.jpg" target="_blank" rel="noopener">Kevin Mullarkey</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Casa_Loma_Toronto,_Canada.jpg" target="_blank" rel="noopener">Bintyamin20248</a> — CC0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Peameal_bacon_sandwich.jpg" target="_blank" rel="noopener">Leventio</a> — CC BY-SA 4.0</li>
+  </template>
+
+  <!-- Shared footer (rendered by js/main.js) -->
+  <div data-component="site-footer"></div>
+
+</body>
+</html>

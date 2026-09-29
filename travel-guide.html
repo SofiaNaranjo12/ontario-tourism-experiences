@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travel Guide — Ontario Tourism Experiences</title>
+  <meta name="description" content="Practical information for travelling between the six regions of this guide: getting around, distances, weather, accessibility and paperwork, with official sources." data-i18n-attr="content:meta.guide">
+  <meta name="theme-color" content="#17352B">
+
+  <!-- Early language flag (same snippet on every page) -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var l = (location.search.match(/[?&]lang=(es|en)/) || [])[1] || localStorage.getItem('ote-lang');
+        if (l === 'es') { d.lang = 'es'; d.classList.add('i18n-pending'); }
+      } catch (e) {}
+      setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/language.js" defer></script>
+  <script src="js/experiences.js" defer></script>
+  <script src="js/favourites.js" defer></script>
+  <script src="js/references.js" defer></script>
+  <script src="js/guide.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body id="top" data-page="guide" data-page-title="title.guide">
+
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+  <!-- Shared header (rendered by js/main.js) -->
+  <div data-component="site-header"></div>
+
+  <noscript><p class="noscript">This experience needs JavaScript enabled. / Esta experiencia necesita JavaScript activado.</p></noscript>
+
+  <main id="main" data-guide>
+
+    <!-- =====================================================
+         INTRO
+         ===================================================== -->
+    <header class="atlas-head guide-head" aria-labelledby="guide-title">
+      <figure class="atlas-head__media reveal-img">
+        <img src="images/home/region-stratford-avon.webp" width="1200" height="900" alt="" decoding="async" data-depth="-0.06">
+      </figure>
+      <div class="atlas-head__text">
+        <p class="eyebrow reveal" data-i18n="guide.eyebrow">Travel Guide</p>
+        <h1 class="display-xl reveal reveal--title" style="--d:1" id="guide-title" data-i18n-html="guide.title"></h1>
+      </div>
+      <div class="atlas-head__side">
+        <p class="lede reveal" style="--d:2" data-i18n="guide.lede"></p>
+        <ul class="stats" data-stagger>
+          <li><span class="stats__num">06</span><span class="stats__label" data-i18n="guide.s1">Regions</span></li>
+          <li><span class="stats__num">911</span><span class="stats__label" data-i18n="guide.s2">Emergencies</span></li>
+          <li><span class="stats__num">13%</span><span class="stats__label" data-i18n="guide.s3">Sales tax</span></li>
+        </ul>
+      </div>
+      <p class="photo-caption atlas-head__caption"><span data-i18n="common.photo">Photo</span> — <span data-i18n="guide.photo">Avon River, Stratford</span></p>
+    </header>
+
+    <!-- Chapter index -->
+    <nav class="guide-index" aria-labelledby="guide-index-title">
+      <p class="chapters__title" id="guide-index-title" data-i18n="guide.chapters">Five chapters</p>
+      <ol>
+        <li><a href="#getting-around"><span class="chapters__num">01</span><span data-i18n="guide.c.around">Getting around</span></a></li>
+        <li><a href="#distances"><span class="chapters__num">02</span><span data-i18n="guide.c.distances">Distances &amp; regions</span></a></li>
+        <li><a href="#weather"><span class="chapters__num">03</span><span data-i18n="guide.c.weather">Weather &amp; what to pack</span></a></li>
+        <li><a href="#accessibility"><span class="chapters__num">04</span><span data-i18n="guide.c.access">Accessibility</span></a></li>
+        <li><a href="#before"><span class="chapters__num">05</span><span data-i18n="guide.c.before">Before you go</span></a></li>
+      </ol>
+      <p class="guide-index__checked" data-i18n="guide.checked"></p>
+    </nav>
+
+    <!-- 01 GETTING AROUND -->
+    <section class="guide-chapter" id="getting-around" aria-labelledby="g1-title">
+      <header class="guide-chapter__head">
+        <span class="guide-chapter__num" aria-hidden="true">01</span>
+        <div>
+          <h2 class="display-md reveal" id="g1-title" data-i18n="guide.c.around">Getting around</h2>
+          <p class="lede reveal" style="--d:1" data-i18n="guide.c.around.lede"></p>
+        </div>
+      </header>
+      <div class="guide-items" data-guide-items="around"></div>
+    </section>
+
+    <!-- 02 DISTANCES & REGIONS -->
+    <section class="guide-chapter guide-chapter--dark" id="distances" aria-labelledby="g2-title">
+      <header class="guide-chapter__head">
+        <span class="guide-chapter__num" aria-hidden="true">02</span>
+        <div>
+          <h2 class="display-md reveal" id="g2-title" data-i18n="guide.c.distances">Distances &amp; regions</h2>
+          <p class="lede reveal" style="--d:1" data-i18n="guide.c.distances.lede"></p>
+        </div>
+      </header>
+      <div class="guide-distances">
+        <div class="guide-distances__map" data-guide-diagram></div>
+        <div class="guide-distances__table">
+          <div data-guide-matrix></div>
+          <a class="btn btn--light" href="plan-your-trip.html"><span class="btn__label"><span data-i18n="guide.dist.cta">Plan a realistic route</span></span><span class="arrow" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 WEATHER & WHAT TO PACK -->
+    <section class="guide-chapter" id="weather" aria-labelledby="g3-title">
+      <header class="guide-chapter__head">
+        <span class="guide-chapter__num" aria-hidden="true">03</span>
+        <div>
+          <h2 class="display-md reveal" id="g3-title" data-i18n="guide.c.weather">Weather &amp; what to pack</h2>
+          <p class="lede reveal" style="--d:1" data-i18n="guide.c.weather.lede"></p>
+        </div>
+      </header>
+      <div class="guide-weather">
+        <article class="guide-normals" data-guide-normals></article>
+        <div class="guide-items guide-items--two" data-guide-items="weather"></div>
+      </div>
+      <a class="link-arrow guide-chapter__more" href="seasons.html"><span data-i18n="nav.seasons">Ontario by Season</span><span class="arrow" aria-hidden="true"></span></a>
+    </section>
+
+    <!-- 04 ACCESSIBILITY -->
+    <section class="guide-chapter guide-chapter--paper" id="accessibility" aria-labelledby="g4-title">
+      <header class="guide-chapter__head">
+        <span class="guide-chapter__num" aria-hidden="true">04</span>
+        <div>
+          <h2 class="display-md reveal" id="g4-title" data-i18n="guide.c.access">Accessibility</h2>
+          <p class="lede reveal" style="--d:1" data-i18n="guide.c.access.lede"></p>
+        </div>
+      </header>
+      <div class="guide-items" data-guide-items="access"></div>
+    </section>
+
+    <!-- 05 BEFORE YOU GO -->
+    <section class="guide-chapter" id="before" aria-labelledby="g5-title">
+      <header class="guide-chapter__head">
+        <span class="guide-chapter__num" aria-hidden="true">05</span>
+        <div>
+          <h2 class="display-md reveal" id="g5-title" data-i18n="guide.c.before">Before you go</h2>
+          <p class="lede reveal" style="--d:1" data-i18n="guide.c.before.lede"></p>
+        </div>
+      </header>
+      <div class="guide-items" data-guide-items="before"></div>
+    </section>
+
+    <section class="page-next" aria-labelledby="guide-next-title">
+      <h2 class="display-md reveal" id="guide-next-title" data-i18n-html="guide.next.title"></h2>
+      <div class="page-next__links reveal" style="--d:1">
+        <a class="btn btn--light" href="plan-your-trip.html"><span class="btn__label"><span data-i18n="nav.plan">Plan Your Trip</span></span><span class="arrow" aria-hidden="true"></span></a>
+        <a class="link-arrow" href="credits.html#references"><span data-i18n="nav.credits">Credits &amp; References</span><span class="arrow" aria-hidden="true"></span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Photo credits for this page (inserted into the footer) -->
+  <template id="page-credits">
+    <li><a href="https://commons.wikimedia.org/wiki/File:Bridge,_Avon_River,_Stratford,_Ontario_(21651644568).jpg" target="_blank" rel="noopener">Ken Lund</a> — CC BY-SA 2.0</li>
+  </template>
+
+  <!-- Shared footer (rendered by js/main.js) -->
+  <div data-component="site-footer"></div>
+
+</body>
+</html>

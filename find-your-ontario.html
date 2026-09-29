@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find Your Ontario — Ontario Tourism Experiences</title>
+  <meta name="description" content="Answer seven questions and discover which of our 24 Ontario experiences matches the way you like to travel." data-i18n-attr="content:meta.quiz">
+  <meta name="theme-color" content="#17352B">
+
+  <!-- Early language flag (same snippet on every page) -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var l = (location.search.match(/[?&]lang=(es|en)/) || [])[1] || localStorage.getItem('ote-lang');
+        if (l === 'es') { d.lang = 'es'; d.classList.add('i18n-pending'); }
+      } catch (e) {}
+      setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="image" href="images/home/quiz-ragged-lake.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/language.js" defer></script>
+  <script src="js/worlds-i18n.js" defer></script>
+  <script src="js/experiences.js" defer></script>
+  <script src="js/favourites.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body id="top" data-page="quiz" data-page-title="title.quiz" data-nav="transparent">
+
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+  <!-- Shared header (rendered by js/main.js) -->
+  <div data-component="site-header"></div>
+
+  <noscript><p class="noscript">This experience needs JavaScript enabled. / Esta experiencia necesita JavaScript activado.</p></noscript>
+
+  <main id="main">
+    <!-- =====================================================
+         FIND YOUR ONTARIO — intro → 7 questions → result
+         Each step is a full scene over a photograph (js/quiz.js)
+         ===================================================== -->
+    <div class="quiz" data-quiz data-step="intro">
+      <div class="quiz__bg" aria-hidden="true">
+        <img class="is-active" src="images/home/quiz-ragged-lake.webp" width="1600" height="1200" alt="" decoding="async" fetchpriority="high">
+        <img alt="" decoding="async">
+      </div>
+      <div class="quiz__shade" aria-hidden="true"></div>
+
+      <div class="quiz__stage">
+        <!-- INTRO -->
+        <section class="quiz-intro" aria-labelledby="quiz-title">
+          <span class="quiz-intro__mark" aria-hidden="true">?</span>
+          <div class="quiz-intro__head">
+            <p class="eyebrow eyebrow--accent"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="quiz.intro.eyebrow">Interactive experience</span></p>
+            <h1 class="display-xl" id="quiz-title" data-i18n-html="quiz.intro.title">Find<br><em>your Ontario.</em></h1>
+          </div>
+          <div class="quiz-intro__body">
+            <p class="lede" data-i18n="quiz.intro.lede"></p>
+            <dl class="fyo__meta">
+              <div><dt data-i18n="home.fyo.m1">Questions</dt><dd>07</dd></div>
+              <div><dt data-i18n="home.fyo.m2">Experiences</dt><dd>24</dd></div>
+              <div><dt data-i18n="home.fyo.m3">Personal match</dt><dd>01</dd></div>
+            </dl>
+            <button type="button" class="btn btn--large btn--glow" data-quiz-start>
+              <span class="btn__label"><span data-i18n="quiz.intro.start">Start</span></span>
+              <span class="arrow" aria-hidden="true"></span>
+            </button>
+            <p class="quiz-intro__note" data-i18n="quiz.intro.note"></p>
+          </div>
+          <p class="photo-caption quiz-intro__caption"><span data-i18n="common.photo">Photo</span> — <span data-i18n="quiz.intro.photo">Ragged Lake, Algonquin Provincial Park</span></p>
+        </section>
+        <!-- Questions and result are rendered here -->
+      </div>
+
+      <p class="sr-only quiz__live" aria-live="polite"></p>
+    </div>
+  </main>
+
+  <!-- Photo credits for this page (inserted into the footer) -->
+  <template id="page-credits">
+    <li><a href="https://commons.wikimedia.org/wiki/File:Ragged_Lake_mirror.jpg" target="_blank" rel="noopener">Wllewis</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Toronto_Skyline_from_Ward%27s_Island_Ferry_(19745155876).jpg" target="_blank" rel="noopener">Lord of the Wings</a> — CC BY-SA 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Sunset_in_Algolquin_Provincial_Park.jpg" target="_blank" rel="noopener">Maksim Sokolov</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Barosaurus,_Royal_Ontario_Museum,_side.jpg" target="_blank" rel="noopener">KristyVan</a> — CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Kensington_Market_Toronto_August_2017_04.jpg" target="_blank" rel="noopener">Arild Vågen</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Centre_Island_Beach_Toronto_2010.jpg" target="_blank" rel="noopener">Josh Evnin</a> — CC BY-SA 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Fall_Colors_at_Algonquin_Provincial_Park,_Canada_-_Autumn_on_Lake_of_Two_Rivers_(29648245373).jpg" target="_blank" rel="noopener">Tony Webster</a> — CC BY 2.0</li>
+    <li><span data-i18n="credits.results">Experience photos: same authors as on the four world pages.</span></li>
+  </template>
+
+  <!-- Shared footer (rendered by js/main.js) -->
+  <div data-component="site-footer"></div>
+
+</body>
+</html>

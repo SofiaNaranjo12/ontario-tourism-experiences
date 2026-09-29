@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adventure — Ontario Tourism Experiences</title>
+  <meta name="description" content="Six adventure experiences in Ontario: Canada’s Wonderland, Ripley’s Aquarium, Toronto Zoo, Blue Mountain Resort, Butterfly Conservatory and Treetop Trekking." data-i18n-attr="content:meta.adventure">
+  <meta name="theme-color" content="#17352B">
+
+  <!-- Early language flag (same snippet on every page) -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var l = (location.search.match(/[?&]lang=(es|en)/) || [])[1] || localStorage.getItem('ote-lang');
+        if (l === 'es') { d.lang = 'es'; d.classList.add('i18n-pending'); }
+      } catch (e) {}
+      setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="image" href="images/adventure/hero-blue-mountain-village.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/language.js" defer></script>
+  <script src="js/worlds-i18n.js" defer></script>
+  <script src="js/experiences.js" defer></script>
+  <script src="js/favourites.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body id="top" data-page="adventure" data-page-title="title.adventure" data-nav="transparent">
+
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+  <!-- Shared header (rendered by js/main.js) -->
+  <div data-component="site-header"></div>
+
+  <noscript><p class="noscript">This experience needs JavaScript enabled. / Esta experiencia necesita JavaScript activado.</p></noscript>
+
+  <main id="main">
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero__media">
+        <img src="images/adventure/hero-blue-mountain-village.webp" width="1920" height="1280"
+             alt="Blue Mountain Village hotels beside a pond, with the green ski slopes of the Niagara Escarpment in summer"
+             data-i18n-attr="alt:adventure.hero.alt" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <p class="hero__eyebrow eyebrow" data-i18n="world.eyebrow" data-i18n-vars='{"n":"04"}'>World 04 of 04 · Ontario</p>
+
+        <h1 class="hero__title" id="page-title">
+          <span class="hero__word hero__word--text"><span style="--i:0" data-i18n="cat.adventure">Adventure</span></span>
+        </h1>
+
+        <div class="hero__row">
+          <p class="hero__tagline">
+            <span data-i18n="section.adventure">Entertainment &amp; Adventure</span>
+            <em data-i18n="adventure.hero.tagline">Speed. Wildlife. Slopes. Treetops.</em>
+          </p>
+          <ul class="page-stats">
+            <li><strong>06</strong><span data-i18n="world.experiences">Experiences</span></li>
+            <li><strong>02</strong><span data-i18n="world.collections">Collections</span></li>
+            <li><strong>03</strong><span data-i18n="world.regions" data-i18n-vars='{"n":3}'>Regions</span></li>
+          </ul>
+          <a class="btn hero__cta" href="#family-attractions">
+            <span class="btn__label"><span data-i18n="world.start">Start exploring</span></span>
+            <span class="arrow arrow--down" aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div class="hero__bottom">
+          <a class="scroll-cue" href="#intro" tabindex="-1" aria-hidden="true">
+            <span class="scroll-cue__line"></span>
+            <span data-i18n="home.hero.scroll">Scroll</span>
+          </a>
+          <nav class="crumbs" data-i18n-attr="aria-label:world.crumbs">
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <span class="crumbs__sep" aria-hidden="true">/</span>
+            <span aria-current="page" data-i18n="cat.adventure">Adventure</span>
+          </nav>
+          <p class="photo-caption"><span data-i18n="common.photo">Photo</span> — Blue Mountain Village</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         INTRO
+         ===================================================== -->
+    <section class="world-intro world-intro--split" id="intro" aria-labelledby="intro-title">
+      <figure class="world-intro__media reveal-img">
+        <img src="images/adventure/intro-ripleys-kelp.webp" width="1000" height="1334" loading="lazy" decoding="async"
+             alt="" data-i18n-attr="alt:adventure.intro.alt" data-depth="-0.06">
+        <figcaption class="photo-caption">Ripley’s Aquarium of Canada</figcaption>
+      </figure>
+      <div class="world-intro__head">
+        <p class="eyebrow reveal" data-i18n="section.adventure">Entertainment &amp; Adventure</p>
+        <h2 class="display-xl reveal reveal--title" style="--d:1" id="intro-title" data-i18n-html="adventure.intro.title">Ontario<br><em>at full speed.</em></h2>
+      </div>
+      <div class="world-intro__body">
+        <p class="lede reveal" style="--d:2" data-i18n="adventure.intro.text"></p>
+        <nav class="chapters reveal" style="--d:3" aria-labelledby="chapters-title">
+          <p class="chapters__title" id="chapters-title" data-i18n="world.chapters">Two collections</p>
+          <ol>
+            <li><a href="#family-attractions"><span class="chapters__num">01</span><span data-i18n="sub.family">Family Attractions</span><span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="#seasonal-adventure"><span class="chapters__num">02</span><span data-i18n="sub.seasonal">Seasonal &amp; Outdoor Adventure</span><span class="arrow" aria-hidden="true"></span></a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CONTACT SHEET — the six experiences at a glance
+         ===================================================== -->
+    <nav class="film" aria-labelledby="film-title">
+      <p class="film__title reveal" id="film-title" data-i18n="world.film">The six experiences</p>
+      <ol data-stagger>
+        <li><a href="#canadas-wonderland"><img src="images/home/adventure-canadas-wonderland.webp" width="720" height="960" loading="lazy" decoding="async" alt=""><span class="film__label"><span class="film__num">01</span><span class="film__name">Canada’s Wonderland</span></span></a></li>
+        <li><a href="#ripleys-aquarium"><img src="images/adventure/ripleys-jellyfish.webp" width="700" height="1057" loading="lazy" decoding="async" alt=""><span class="film__label"><span class="film__num">02</span><span class="film__name">Ripley’s Aquarium of Canada</span></span></a></li>
+        <li><a href="#toronto-zoo"><img src="images/adventure/toronto-zoo.webp" width="860" height="1290" loading="lazy" decoding="async" alt=""><span class="film__label"><span class="film__num">03</span><span class="film__name">Toronto Zoo</span></span></a></li>
+        <li><a href="#blue-mountain-resort"><img src="images/adventure/blue-mountain-night.webp" width="1920" height="1442" loading="lazy" decoding="async" alt=""><span class="film__label"><span class="film__num">04</span><span class="film__name">Blue Mountain Resort</span></span></a></li>
+        <li><a href="#butterfly-conservatory"><img src="images/home/adventure-butterfly-conservatory.webp" width="900" height="743" loading="lazy" decoding="async" alt=""><span class="film__label"><span class="film__num">05</span><span class="film__name">Niagara Parks Butterfly Conservatory</span></span></a></li>
+        <li><a href="#treetop-trekking"><img src="images/adventure/treetop-trekking-horseshoe.webp" width="1200" height="768" loading="lazy" decoding="async" alt="" style="object-position: 70% center"><span class="film__label"><span class="film__num">06</span><span class="film__name">Treetop Trekking at Horseshoe Resort</span></span></a></li>
+      </ol>
+    </nav>
+
+    <!-- =====================================================
+         COLLECTION 01 · FAMILY ATTRACTIONS
+         ===================================================== -->
+    <section class="collection" id="family-attractions" aria-labelledby="c1-title">
+      <header class="collection__head">
+        <figure class="collection__media reveal-img">
+          <img src="images/adventure/opener-leviathan-riders.webp" width="1920" height="1440" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:adventure.c1.alt" data-depth="-0.08" style="object-position: center 35%">
+        </figure>
+        <p class="photo-caption collection__caption"><span data-i18n="common.photo">Photo</span> — Leviathan, Canada’s Wonderland</p>
+        <span class="collection__num" aria-hidden="true" data-depth="0.1">01</span>
+        <div class="collection__intro">
+          <p class="eyebrow reveal"><span data-i18n="world.collection">Collection</span>&nbsp;01</p>
+          <h2 class="display-lg reveal reveal--title" style="--d:1" id="c1-title" data-i18n="sub.family">Family Attractions</h2>
+          <p class="lede reveal" style="--d:2" data-i18n="adventure.c1.lede"></p>
+        </div>
+        <nav class="collection__list reveal" style="--d:3" aria-labelledby="c1-list">
+          <p class="chapters__title" id="c1-list" data-i18n="world.inCollection">In this collection</p>
+          <ol data-stagger>
+            <li><a href="#canadas-wonderland"><span class="collection__list-num">01</span>Canada’s Wonderland<span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="#ripleys-aquarium"><span class="collection__list-num">02</span>Ripley’s Aquarium of Canada<span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="#toronto-zoo"><span class="collection__list-num">03</span>Toronto Zoo<span class="arrow" aria-hidden="true"></span></a></li>
+          </ol>
+        </nav>
+      </header>
+
+      <!-- 01 Canada's Wonderland -->
+      <article class="exp exp--c" id="canadas-wonderland" aria-labelledby="exp-wonderland">
+        <figure class="exp__media reveal-img">
+          <img src="images/home/adventure-canadas-wonderland.webp" width="720" height="960" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.adventure.shot3" data-depth="-0.05">
+          <figcaption class="exp__caption">Leviathan</figcaption>
+        </figure>
+        <figure class="world__shot reveal-img" style="--x: 37%; --b: -120px; --w: 13vw; --ar: 700 / 1054; --d: 2" data-depth="0.07">
+          <img src="images/adventure/wonderland-drop-tower.webp" width="700" height="1054" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.wonderland.detailAlt">
+          <figcaption class="world__shot-cap">Drop Tower</figcaption>
+        </figure>
+        <span class="exp__num" aria-hidden="true" data-depth="0.1">01</span>
+        <div class="exp__body reveal">
+          <p class="exp__meta"><span class="exp__index">01</span><span data-i18n="sub.family">Family Attractions</span></p>
+          <h3 class="exp__title" id="exp-wonderland">Canada’s Wonderland</h3>
+          <p class="exp__place">Vaughan, Ontario</p>
+          <p class="exp__text" data-i18n="exp.wonderland.text"></p>
+          <p class="exp__why"><span class="exp__why-label" data-i18n="world.why">Why go</span><span class="exp__why-text" data-i18n="exp.wonderland.why"></span></p>
+          <dl class="exp__facts">
+            <div><dt data-i18n="world.region">Region</dt><dd data-i18n="region.torontoShort"></dd></div>
+            <div><dt data-i18n="world.category">Category</dt><dd data-i18n="cat.adventure"></dd></div>
+            <div><dt data-i18n="world.admission">Admission</dt><dd><a class="exp__price" href="https://www.sixflags.com/canadaswonderland/daily-tickets" target="_blank" rel="noopener" data-i18n="price.check"></a></dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- 02 Ripley's Aquarium of Canada -->
+      <article class="exp exp--b" id="ripleys-aquarium" aria-labelledby="exp-ripleys">
+        <figure class="exp__media reveal-img">
+          <img src="images/home/adventure-ripleys-aquarium.webp" width="1000" height="667" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.adventure.shot1" data-depth="-0.05">
+          <figcaption class="exp__caption">Dangerous Lagoon</figcaption>
+        </figure>
+        <figure class="world__shot reveal-img" style="--x: 44%; --b: -90px; --w: 11vw; --ar: 700 / 1057; --d: 2" data-depth="0.07">
+          <img src="images/adventure/ripleys-jellyfish.webp" width="700" height="1057" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.ripleys.detailAlt">
+          <figcaption class="world__shot-cap" data-i18n="exp.ripleys.detailCap">Pacific sea nettle</figcaption>
+        </figure>
+        <span class="exp__num" aria-hidden="true" data-depth="0.1">02</span>
+        <div class="exp__body reveal">
+          <p class="exp__meta"><span class="exp__index">02</span><span data-i18n="sub.family">Family Attractions</span></p>
+          <h3 class="exp__title" id="exp-ripleys">Ripley’s Aquarium of Canada</h3>
+          <p class="exp__place">Toronto, Ontario</p>
+          <p class="exp__text" data-i18n="exp.ripleys.text"></p>
+          <p class="exp__why"><span class="exp__why-label" data-i18n="world.why">Why go</span><span class="exp__why-text" data-i18n="exp.ripleys.why"></span></p>
+          <dl class="exp__facts">
+            <div><dt data-i18n="world.region">Region</dt><dd data-i18n="region.torontoShort"></dd></div>
+            <div><dt data-i18n="world.category">Category</dt><dd data-i18n="cat.adventure"></dd></div>
+            <div><dt data-i18n="world.admission">Admission</dt><dd><a class="exp__price" href="https://www.ripleys.com/attractions/ripleys-aquarium-of-canada" target="_blank" rel="noopener" data-i18n="price.check"></a></dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- 03 Toronto Zoo -->
+      <article class="exp exp--c" id="toronto-zoo" aria-labelledby="exp-zoo">
+        <figure class="exp__media reveal-img">
+          <img src="images/adventure/toronto-zoo.webp" width="860" height="1290" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.zoo.alt" data-depth="-0.05" style="object-position: 50% 30%">
+        </figure>
+        <figure class="world__shot reveal-img" style="--x: 37%; --b: 8%; --w: 16vw; --ar: 4 / 3; --d: 2" data-depth="0.06">
+          <img src="images/adventure/toronto-zoo-entrance.webp" width="800" height="600" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.zoo.detailAlt">
+        </figure>
+        <span class="exp__num" aria-hidden="true" data-depth="0.12">03</span>
+        <div class="exp__body reveal">
+          <p class="exp__meta"><span class="exp__index">03</span><span data-i18n="sub.family">Family Attractions</span></p>
+          <h3 class="exp__title" id="exp-zoo">Toronto Zoo</h3>
+          <p class="exp__place">Toronto (Scarborough), Ontario</p>
+          <p class="exp__text" data-i18n="exp.zoo.text"></p>
+          <p class="exp__why"><span class="exp__why-label" data-i18n="world.why">Why go</span><span class="exp__why-text" data-i18n="exp.zoo.why"></span></p>
+          <dl class="exp__facts">
+            <div><dt data-i18n="world.region">Region</dt><dd data-i18n="region.torontoShort"></dd></div>
+            <div><dt data-i18n="world.category">Category</dt><dd data-i18n="cat.adventure"></dd></div>
+            <div><dt data-i18n="world.admission">Admission</dt><dd><a class="exp__price" href="https://www.torontozoo.com/tickets" target="_blank" rel="noopener" data-i18n="price.check"></a></dd></div>
+          </dl>
+        </div>
+      </article>
+    </section>
+
+    <!-- =====================================================
+         COLLECTION 02 · SEASONAL & OUTDOOR ADVENTURE
+         ===================================================== -->
+    <section class="collection collection--alt" id="seasonal-adventure" aria-labelledby="c2-title">
+      <header class="collection__head">
+        <figure class="collection__media reveal-img">
+          <img src="images/adventure/opener-blue-mountain-view.webp" width="1920" height="1440" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:adventure.c2.alt" data-depth="-0.08">
+        </figure>
+        <p class="photo-caption collection__caption"><span data-i18n="common.photo">Photo</span> — <span data-i18n="adventure.c2.caption">View from Blue Mountain</span></p>
+        <span class="collection__num" aria-hidden="true" data-depth="0.1">02</span>
+        <div class="collection__intro">
+          <p class="eyebrow reveal"><span data-i18n="world.collection">Collection</span>&nbsp;02</p>
+          <h2 class="display-lg reveal reveal--title" style="--d:1" id="c2-title" data-i18n="sub.seasonal">Seasonal &amp; Outdoor Adventure</h2>
+          <p class="lede reveal" style="--d:2" data-i18n="adventure.c2.lede"></p>
+        </div>
+        <nav class="collection__list reveal" style="--d:3" aria-labelledby="c2-list">
+          <p class="chapters__title" id="c2-list" data-i18n="world.inCollection">In this collection</p>
+          <ol data-stagger>
+            <li><a href="#blue-mountain-resort"><span class="collection__list-num">04</span>Blue Mountain Resort<span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="#butterfly-conservatory"><span class="collection__list-num">05</span>Niagara Parks Butterfly Conservatory<span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="#treetop-trekking"><span class="collection__list-num">06</span>Treetop Trekking at Horseshoe Resort<span class="arrow" aria-hidden="true"></span></a></li>
+          </ol>
+        </nav>
+      </header>
+
+      <!-- 04 Blue Mountain Resort -->
+      <article class="exp exp--cine" id="blue-mountain-resort" aria-labelledby="exp-bluemountain">
+        <figure class="exp__media reveal-img">
+          <img src="images/adventure/blue-mountain-night.webp" width="1920" height="1442" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.adventure.alt" data-depth="-0.05" style="object-position: 70% center">
+          <figcaption class="exp__caption">Blue Mountain Village</figcaption>
+        </figure>
+        <figure class="world__shot reveal-img" style="--x: 60%; --b: 9%; --w: 11vw; --ar: 700 / 1050; --d: 2" data-depth="0.07">
+          <img src="images/adventure/blue-mountain-ridge-runner.webp" width="700" height="1050" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.bluemountain.detailAlt">
+          <figcaption class="world__shot-cap">Ridge Runner</figcaption>
+        </figure>
+        <span class="exp__num" aria-hidden="true" data-depth="0.12">04</span>
+        <div class="exp__body reveal">
+          <p class="exp__meta"><span class="exp__index">04</span><span data-i18n="sub.seasonal">Seasonal &amp; Outdoor Adventure</span></p>
+          <h3 class="exp__title" id="exp-bluemountain">Blue Mountain Resort</h3>
+          <p class="exp__place">The Blue Mountains, Ontario</p>
+          <p class="exp__text" data-i18n="exp.bluemountain.text"></p>
+          <p class="exp__why"><span class="exp__why-label" data-i18n="world.why">Why go</span><span class="exp__why-text" data-i18n="exp.bluemountain.why"></span></p>
+          <dl class="exp__facts">
+            <div><dt data-i18n="world.region">Region</dt><dd data-i18n="region.blue"></dd></div>
+            <div><dt data-i18n="world.category">Category</dt><dd data-i18n="cat.adventure"></dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- 05 Niagara Parks Butterfly Conservatory -->
+      <article class="exp exp--c" id="butterfly-conservatory" aria-labelledby="exp-butterfly">
+        <figure class="exp__media reveal-img">
+          <img src="images/home/adventure-butterfly-conservatory.webp" width="900" height="743" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.adventure.shot2" data-depth="-0.05">
+        </figure>
+        <figure class="world__shot reveal-img" style="--x: 35%; --b: -80px; --w: 16vw; --ar: 3 / 2; --d: 2" data-depth="0.06">
+          <img src="images/adventure/butterfly-hamadryas.webp" width="800" height="533" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.butterfly.detailAlt">
+        </figure>
+        <span class="exp__num" aria-hidden="true" data-depth="0.1">05</span>
+        <div class="exp__body reveal">
+          <p class="exp__meta"><span class="exp__index">05</span><span data-i18n="sub.seasonal">Seasonal &amp; Outdoor Adventure</span></p>
+          <h3 class="exp__title" id="exp-butterfly">Niagara Parks Butterfly Conservatory</h3>
+          <p class="exp__place">Niagara Falls, Ontario</p>
+          <p class="exp__text" data-i18n="exp.butterfly.text"></p>
+          <p class="exp__why"><span class="exp__why-label" data-i18n="world.why">Why go</span><span class="exp__why-text" data-i18n="exp.butterfly.why"></span></p>
+          <dl class="exp__facts">
+            <div><dt data-i18n="world.region">Region</dt><dd data-i18n="region.niagara"></dd></div>
+            <div><dt data-i18n="world.category">Category</dt><dd data-i18n="cat.adventure"></dd></div>
+            <div><dt data-i18n="world.admission">Admission</dt><dd><a class="exp__price" href="https://www.niagaraparks.com/visit/attractions/butterfly-conservatory" target="_blank" rel="noopener" data-i18n="price.butterfly"></a></dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- 06 Treetop Trekking at Horseshoe Resort -->
+      <article class="exp exp--wide" id="treetop-trekking" aria-labelledby="exp-treetop">
+        <figure class="exp__media reveal-img">
+          <img src="images/adventure/horseshoe-resort-hill.webp" width="1600" height="1200" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.treetop.hillAlt" data-depth="-0.05" style="object-position: center 55%">
+          <figcaption class="exp__caption">Horseshoe Resort · Horseshoe Valley</figcaption>
+        </figure>
+        <span class="exp__num" aria-hidden="true" data-depth="0.1">06</span>
+        <div class="exp__body reveal">
+          <p class="exp__meta"><span class="exp__index">06</span><span data-i18n="sub.seasonal">Seasonal &amp; Outdoor Adventure</span></p>
+          <h3 class="exp__title" id="exp-treetop">Treetop Trekking at Horseshoe Resort</h3>
+          <p class="exp__place">Oro-Medonte (Horseshoe Valley), Ontario</p>
+          <p class="exp__text" data-i18n="exp.treetop.text"></p>
+          <p class="exp__why"><span class="exp__why-label" data-i18n="world.why">Why go</span><span class="exp__why-text" data-i18n="exp.treetop.why"></span></p>
+          <dl class="exp__facts">
+            <div><dt data-i18n="world.region">Region</dt><dd data-i18n="region.blue"></dd></div>
+            <div><dt data-i18n="world.category">Category</dt><dd data-i18n="cat.adventure"></dd></div>
+            <div><dt data-i18n="world.admission">Admission</dt><dd><a class="exp__price" href="https://www.treetoptrekking.com/parks/barrie" target="_blank" rel="noopener" data-i18n="price.treetop"></a></dd></div>
+          </dl>
+          <figure class="exp__aside reveal-img">
+            <img src="images/adventure/treetop-trekking-horseshoe.webp" width="1200" height="768" loading="lazy" decoding="async"
+                 alt="" data-i18n-attr="alt:exp.treetop.alt" style="object-position: center 70%">
+            <figcaption class="world__shot-cap">Horseshoe Resort</figcaption>
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <p class="prices-note reveal" data-i18n="world.pricesNote"></p>
+
+    <!-- =====================================================
+         NEXT WORLD (loops back to the first one)
+         ===================================================== -->
+    <section class="world-next" aria-labelledby="next-title">
+      <a class="world-next__link" href="nature.html">
+        <p class="eyebrow eyebrow--accent reveal"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="world.next">Next world</span>&nbsp;· 01</p>
+        <h2 class="world-next__title reveal reveal--title" style="--d:1" id="next-title"><span data-i18n="cat.nature">Nature</span><span class="arrow" aria-hidden="true"></span></h2>
+        <p class="world-next__sub reveal" style="--d:2" data-i18n="section.nature">Nature &amp; Outdoor Experiences</p>
+      </a>
+      <figure class="world-next__media reveal-img">
+        <img src="images/home/nature-niagara-falls.webp" width="1600" height="1200" loading="lazy" decoding="async"
+             alt="" data-i18n-attr="alt:home.worlds.nature.alt" style="object-position: 40% center">
+      </figure>
+      <nav class="worlds-nav" aria-labelledby="worlds-nav-title">
+        <p class="worlds-nav__title" id="worlds-nav-title" data-i18n="world.all">The four worlds</p>
+        <ol>
+          <li><a href="nature.html"><span>01</span><span data-i18n="nav.nature">Nature</span></a></li>
+          <li><a href="culture.html"><span>02</span><span data-i18n="nav.culture">Culture</span></a></li>
+          <li><a href="food.html"><span>03</span><span data-i18n="nav.flavours">Flavours</span></a></li>
+          <li><a href="entertainment.html" aria-current="page"><span>04</span><span data-i18n="nav.adventure">Adventure</span></a></li>
+        </ol>
+        <a class="link-arrow" href="index.html"><span data-i18n="world.back">Back to Home</span><span class="arrow" aria-hidden="true"></span></a>
+      </nav>
+    </section>
+
+  </main>
+
+  <!-- Photo credits for this page (inserted into the footer) -->
+  <template id="page-credits">
+    <li><a href="https://commons.wikimedia.org/wiki/File:Blue_Mountain_Resort_-_Summer_view.jpg" target="_blank" rel="noopener">Andrew Skujins</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Leviathan_descending_hill.jpg" target="_blank" rel="noopener">Jeremy Thompson</a> — CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Dangerous_Lagoon_-_Sharks-9.jpg" target="_blank" rel="noopener">RipleysAquaCA</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Orangutan_Toronto_Zoo_2292.jpg" target="_blank" rel="noopener">ImagePerson</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Blue_Mountain_Ontario_at_night_(landscape).jpg" target="_blank" rel="noopener">Makeworldpedia</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Morpho_peleides_Niagara_Parks_Butterfly_Conservatory.jpg" target="_blank" rel="noopener">The Cosmonaut</a> — CC BY-SA 2.5 CA</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Horseshoe_Resort_Hill.jpg" target="_blank" rel="noopener">Misskatewiki</a> — CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Drop_Tower_in_Canada%27s_Wonderland.jpg" target="_blank" rel="noopener">K2HWY</a> — CC BY 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Horseshoe_Resort_2.JPG" target="_blank" rel="noopener">P199</a> — CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Canadian_Falls_(Horseshoe_Falls)_and_the_Hornblower_Niagara_Cruises_boat;_Niagara_Falls.JPG" target="_blank" rel="noopener">Thomaswm</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Canada_Wonderland_rollercoaster_2015.jpg" target="_blank" rel="noopener">GolhaMedia</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Chrysaora_fuscescens_Ripley%27s_Aquarium_of_Canada_1.JPG" target="_blank" rel="noopener">Gzzz</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Toronto_Zoo_(Scarborough_-_Rouge)_(5530655023).jpg" target="_blank" rel="noopener">JasonParis</a> — CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:View_From_Blue_Mountain_4.jpg" target="_blank" rel="noopener">XeresNelro</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Blue_Mountain_Ridge_Runner,_2026.jpg" target="_blank" rel="noopener">Chicken4War</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Hamadryas_februa_Niagara_Parks_Butterfly_Conservatory.jpg" target="_blank" rel="noopener">The Cosmonaut (grey cracker)</a> — CC BY-SA 2.5 CA</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Ripley%27s_Aquarium_of_Canada,_Toronto,_Ontario_(29709376480).jpg" target="_blank" rel="noopener">Ken Lund</a> — CC BY-SA 2.0</li>
+  </template>
+
+  <!-- Shared footer (rendered by js/main.js) -->
+  <div data-component="site-footer"></div>
+
+</body>
+</html>

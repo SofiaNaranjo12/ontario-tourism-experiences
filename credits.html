@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Credits &amp; References — Ontario Tourism Experiences</title>
+  <meta name="description" content="Photographs, authors and licences, information sources in APA 7 style, map, software and typography used in this guide." data-i18n-attr="content:meta.credits">
+  <meta name="theme-color" content="#17352B">
+
+  <!-- Early language flag (same snippet on every page) -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var l = (location.search.match(/[?&]lang=(es|en)/) || [])[1] || localStorage.getItem('ote-lang');
+        if (l === 'es') { d.lang = 'es'; d.classList.add('i18n-pending'); }
+      } catch (e) {}
+      setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/language.js" defer></script>
+  <script src="js/experiences.js" defer></script>
+  <script src="js/favourites.js" defer></script>
+  <script src="js/references.js" defer></script>
+  <script src="js/credits.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body id="top" data-page="credits" data-page-title="title.credits">
+
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+  <!-- Shared header (rendered by js/main.js) -->
+  <div data-component="site-header"></div>
+
+  <noscript><p class="noscript">This experience needs JavaScript enabled. / Esta experiencia necesita JavaScript activado.</p></noscript>
+
+  <main id="main" data-credits>
+
+    <header class="atlas-head atlas-head--plain credits-head" aria-labelledby="credits-title">
+      <div class="atlas-head__text">
+        <p class="eyebrow reveal" data-i18n="credits.eyebrow">Credits &amp; References</p>
+        <h1 class="display-xl reveal reveal--title" style="--d:1" id="credits-title" data-i18n-html="credits.title"></h1>
+      </div>
+      <div class="atlas-head__side">
+        <p class="lede reveal" style="--d:2" data-i18n="credits.lede"></p>
+        <ul class="stats" data-stagger>
+          <li><span class="stats__num" data-count-photos>66</span><span class="stats__label" data-i18n="credits.s1">Photographs</span></li>
+          <li><span class="stats__num" data-count-refs>64</span><span class="stats__label" data-i18n="credits.s2">Information sources</span></li>
+          <li><span class="stats__num">12</span><span class="stats__label" data-i18n="credits.s3">Pages</span></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="credits">
+      <nav class="credits-index" aria-labelledby="credits-index-title">
+        <p class="chapters__title" id="credits-index-title" data-i18n="credits.index">Contents</p>
+        <ol>
+          <li><a href="#photography"><span class="chapters__num">01</span><span data-i18n="credits.photos.title">Photography</span></a></li>
+          <li><a href="#references"><span class="chapters__num">02</span><span data-i18n="credits.refs.title">Information sources</span></a></li>
+          <li><a href="#software"><span class="chapters__num">03</span><span data-i18n="credits.tech.title">Map, software and typography</span></a></li>
+          <li><a href="#about"><span class="chapters__num">04</span><span data-i18n="credits.about.title">About this project</span></a></li>
+        </ol>
+      </nav>
+
+      <div class="credits-body">
+        <section class="credits-section" id="photography" aria-labelledby="c-photos">
+          <h2 class="display-md" id="c-photos"><span class="credits-section__num">01</span><span data-i18n="credits.photos.title">Photography</span></h2>
+          <p class="credits-section__lede" data-i18n="credits.photos.lede"></p>
+          <p class="credits-callout" data-i18n="credits.photos.reuse"></p>
+          <div data-credits-photos></div>
+        </section>
+
+        <section class="credits-section" id="references" aria-labelledby="c-refs">
+          <h2 class="display-md" id="c-refs"><span class="credits-section__num">02</span><span data-i18n="credits.refs.title">Information sources</span></h2>
+          <p class="credits-section__lede" data-i18n="credits.refs.lede"></p>
+          <div data-credits-refs></div>
+          <p class="credits-callout" data-i18n="credits.refs.texts"></p>
+        </section>
+
+        <section class="credits-section" id="software" aria-labelledby="c-tech">
+          <h2 class="display-md" id="c-tech"><span class="credits-section__num">03</span><span data-i18n="credits.tech.title">Map, software and typography</span></h2>
+          <h3 class="credits-sub" data-i18n="credits.tech.map">Base map</h3>
+          <ul class="credits-apa"><li data-apa-map></li></ul>
+          <h3 class="credits-sub" data-i18n="credits.tech.lib">Map library</h3>
+          <ul class="credits-apa"><li data-apa-leaflet></li></ul>
+          <h3 class="credits-sub" data-i18n="credits.tech.fonts">Typography</h3>
+          <p class="credits-section__lede" data-i18n="credits.tech.fontsText"></p>
+          <ul class="credits-apa"><li data-apa-fonts></li></ul>
+          <p class="credits-callout" data-i18n="credits.tech.stack"></p>
+        </section>
+
+        <section class="credits-section" id="about" aria-labelledby="c-about">
+          <h2 class="display-md" id="c-about"><span class="credits-section__num">04</span><span data-i18n="credits.about.title">About this project</span></h2>
+          <p class="credits-section__lede" data-i18n="credits.about.text"></p>
+        </section>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Shared footer (rendered by js/main.js) -->
+  <div data-component="site-footer"></div>
+
+</body>
+</html>

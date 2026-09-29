@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan Your Trip — Ontario Tourism Experiences</title>
+  <meta name="description" content="Choose how many days, who you travel with, your interests, a region and a season: get a realistic day-by-day itinerary with the 24 experiences of this guide." data-i18n-attr="content:meta.plan">
+  <meta name="theme-color" content="#17352B">
+
+  <!-- Early language flag (same snippet on every page) -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var l = (location.search.match(/[?&]lang=(es|en)/) || [])[1] || localStorage.getItem('ote-lang');
+        if (l === 'es') { d.lang = 'es'; d.classList.add('i18n-pending'); }
+      } catch (e) {}
+      setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="image" href="images/adventure/opener-blue-mountain-view.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/language.js" defer></script>
+  <script src="js/worlds-i18n.js" defer></script>
+  <script src="js/experiences.js" defer></script>
+  <script src="js/favourites.js" defer></script>
+  <script src="js/plan.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body id="top" data-page="plan" data-page-title="title.plan" data-nav="transparent">
+
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+  <!-- Shared header (rendered by js/main.js) -->
+  <div data-component="site-header"></div>
+
+  <noscript><p class="noscript">This experience needs JavaScript enabled. / Esta experiencia necesita JavaScript activado.</p></noscript>
+
+  <main id="main">
+    <!-- =====================================================
+         PLAN YOUR TRIP — intro → 5 choices → itinerary
+         Same scene language as Find Your Ontario (js/plan.js)
+         ===================================================== -->
+    <div class="quiz planner" data-planner data-step="intro">
+      <div class="quiz__bg" aria-hidden="true">
+        <img class="is-active" src="images/adventure/opener-blue-mountain-view.webp" width="1920" height="1080" alt="" decoding="async" fetchpriority="high">
+        <img alt="" decoding="async">
+      </div>
+      <div class="quiz__shade" aria-hidden="true"></div>
+
+      <div class="quiz__stage">
+        <!-- INTRO -->
+        <section class="quiz-intro planner-intro" aria-labelledby="plan-title">
+          <ol class="planner-intro__route" aria-hidden="true">
+            <li>01</li><li>02</li><li>03</li><li>05</li><li>07</li>
+          </ol>
+          <div class="quiz-intro__head">
+            <p class="eyebrow eyebrow--accent"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="plan.intro.eyebrow">Interactive planner</span></p>
+            <h1 class="display-xl" id="plan-title" data-i18n-html="plan.intro.title">Plan<br><em>your trip.</em></h1>
+          </div>
+          <div class="quiz-intro__body">
+            <p class="lede" data-i18n="plan.intro.lede"></p>
+            <dl class="fyo__meta">
+              <div><dt data-i18n="plan.intro.m1">Choices</dt><dd>05</dd></div>
+              <div><dt data-i18n="plan.intro.m2">Experiences</dt><dd>24</dd></div>
+              <div><dt data-i18n="plan.intro.m3">Regions</dt><dd>06</dd></div>
+            </dl>
+            <div class="planner-intro__favs" data-plan-favs hidden></div>
+            <button type="button" class="btn btn--large btn--glow" data-plan-start>
+              <span class="btn__label"><span data-i18n="plan.intro.start">Start planning</span></span>
+              <span class="arrow" aria-hidden="true"></span>
+            </button>
+            <p class="quiz-intro__note" data-i18n="plan.intro.note"></p>
+          </div>
+          <p class="photo-caption quiz-intro__caption"><span data-i18n="common.photo">Photo</span> — <span data-i18n="plan.intro.photo">View from Blue Mountain</span></p>
+        </section>
+        <!-- Steps are rendered here -->
+      </div>
+
+      <p class="sr-only quiz__live" aria-live="polite"></p>
+    </div>
+
+    <!-- RESULT — rendered by js/plan.js -->
+    <section class="trip" data-trip aria-labelledby="trip-title" hidden></section>
+  </main>
+
+  <!-- Photo credits for this page (inserted into the footer) -->
+  <template id="page-credits">
+    <li><a href="https://commons.wikimedia.org/wiki/File:View_From_Blue_Mountain_4.jpg" target="_blank" rel="noopener">XeresNelro</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Toronto_on_a_summer_day.jpg" target="_blank" rel="noopener">Benson Kua</a> — CC BY-SA 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Centre_Island_Beach_Toronto_2010.jpg" target="_blank" rel="noopener">Josh Evnin</a> — CC BY-SA 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Wikivoyage_banner_wines_of_ontario_3.jpg" target="_blank" rel="noopener">Graham</a> — CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Bruce_Peninsula_National_Park_cliffs.jpg" target="_blank" rel="noopener">The Cosmonaut</a> — CC BY-SA 2.5 CA</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Fall_Colors_at_Algonquin_Provincial_Park,_Canada_-_Autumn_on_Lake_of_Two_Rivers_(29648245373).jpg" target="_blank" rel="noopener">Tony Webster</a> — CC BY 2.0</li>
+    <li><span data-i18n="credits.results">Experience photos: same authors as on the four world pages.</span></li>
+  </template>
+
+  <!-- Shared footer (rendered by js/main.js) -->
+  <div data-component="site-footer"></div>
+
+</body>
+</html>

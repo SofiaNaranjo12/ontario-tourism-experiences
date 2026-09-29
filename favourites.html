@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Favourites — Ontario Tourism Experiences</title>
+  <meta name="description" content="The Ontario experiences you saved while exploring this guide, ready to plan a trip or see on the map." data-i18n-attr="content:meta.favourites">
+  <meta name="theme-color" content="#17352B">
+
+  <!-- Early language flag (same snippet on every page) -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var l = (location.search.match(/[?&]lang=(es|en)/) || [])[1] || localStorage.getItem('ote-lang');
+        if (l === 'es') { d.lang = 'es'; d.classList.add('i18n-pending'); }
+      } catch (e) {}
+      setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/language.js" defer></script>
+  <script src="js/worlds-i18n.js" defer></script>
+  <script src="js/experiences.js" defer></script>
+  <script src="js/favourites.js" defer></script>
+  <script src="js/cards.js" defer></script>
+  <script src="js/favourites-page.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body id="top" data-page="favourites" data-page-title="title.favourites">
+
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+  <!-- Shared header (rendered by js/main.js) -->
+  <div data-component="site-header"></div>
+
+  <noscript><p class="noscript">This experience needs JavaScript enabled. / Esta experiencia necesita JavaScript activado.</p></noscript>
+
+  <main id="main">
+
+    <!-- =====================================================
+         INTRO — counters update live (js/favourites-page.js)
+         ===================================================== -->
+    <header class="atlas-head atlas-head--plain favs-head" aria-labelledby="favs-title">
+      <svg class="favs-head__heart" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20.3s-7.4-4.5-9.2-9.1C1.5 7.9 3.5 4.6 6.9 4.6c2.1 0 3.7 1.1 5.1 3 1.4-1.9 3-3 5.1-3 3.4 0 5.4 3.3 4.1 6.6-1.8 4.6-9.2 9.1-9.2 9.1z"/></svg>
+      <div class="atlas-head__text">
+        <p class="eyebrow reveal" data-i18n="favs.eyebrow">My Favourites</p>
+        <h1 class="display-xl reveal reveal--title" style="--d:1" id="favs-title" data-i18n-html="favs.title"></h1>
+      </div>
+      <div class="atlas-head__side">
+        <p class="lede reveal" style="--d:2" data-i18n="favs.lede"></p>
+        <ul class="stats" data-stagger>
+          <li><span class="stats__num" data-fav-total>00</span><span class="stats__label" data-i18n="favs.s1">Saved</span></li>
+          <li><span class="stats__num" data-fav-regions>00</span><span class="stats__label" data-i18n="favs.s2">Regions</span></li>
+          <li><span class="stats__num" data-fav-worlds>00</span><span class="stats__label" data-i18n="favs.s3">Worlds</span></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="favs" data-favourites aria-labelledby="favs-list-title">
+      <!-- With favourites -->
+      <div class="favs__full" data-fav-full hidden>
+        <div class="favs__bar">
+          <div>
+            <h2 class="favs__title" id="favs-list-title" data-i18n="favs.listTitle">Your saved experiences</h2>
+            <p class="favs__hint" data-i18n="favs.hint"></p>
+          </div>
+          <div class="favs__actions">
+            <a class="btn" href="plan-your-trip.html?favs=1" data-fav-plan><span class="btn__label"><span data-i18n="favs.plan">Plan with my favourites</span></span><span class="arrow" aria-hidden="true"></span></a>
+            <a class="link-arrow" href="map.html" data-fav-map><span data-i18n="favs.map">View on map</span><span class="map-pin-icon" aria-hidden="true"></span></a>
+          </div>
+        </div>
+        <div class="favs__grid" data-fav-grid></div>
+        <p class="favs__storage" data-i18n="favs.storage"></p>
+      </div>
+
+      <!-- Empty state -->
+      <div class="favs-empty" data-fav-empty hidden>
+        <figure class="favs-empty__media">
+          <img src="images/home/bridge-toronto-islands-ferry.webp" width="1600" height="1067" alt="" loading="lazy" decoding="async">
+          <figcaption class="photo-caption"><span data-i18n="common.photo">Photo</span> — <span data-i18n="favs.empty.photo"></span></figcaption>
+        </figure>
+        <div class="favs-empty__text">
+          <svg class="favs-empty__heart" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20.3s-7.4-4.5-9.2-9.1C1.5 7.9 3.5 4.6 6.9 4.6c2.1 0 3.7 1.1 5.1 3 1.4-1.9 3-3 5.1-3 3.4 0 5.4 3.3 4.1 6.6-1.8 4.6-9.2 9.1-9.2 9.1z"/></svg>
+          <h2 class="display-md" data-i18n-html="favs.empty.title"></h2>
+          <p class="favs-empty__lede" data-i18n="favs.empty.text"></p>
+          <a class="btn btn--large" href="index.html#worlds"><span class="btn__label"><span data-i18n="favs.empty.cta">Explore Ontario</span></span><span class="arrow" aria-hidden="true"></span></a>
+          <p class="favs-empty__or" data-i18n="favs.empty.or">Or start from</p>
+          <ul class="favs-empty__links">
+            <li><a class="link-arrow" href="find-your-ontario.html"><span data-i18n="nav.quiz">Find Your Ontario</span><span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a class="link-arrow" href="seasons.html"><span data-i18n="nav.seasons">Ontario by Season</span><span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a class="link-arrow" href="map.html"><span data-i18n="nav.map">Explore Map</span><span class="arrow" aria-hidden="true"></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-next" aria-labelledby="favs-next-title">
+      <h2 class="display-md reveal" id="favs-next-title" data-i18n-html="favs.next.title"></h2>
+      <div class="page-next__links reveal" style="--d:1">
+        <a class="btn btn--light" href="travel-guide.html"><span class="btn__label"><span data-i18n="nav.guide">Travel Guide</span></span><span class="arrow" aria-hidden="true"></span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Photo credits for this page (inserted into the footer) -->
+  <template id="page-credits">
+    <li><a href="https://commons.wikimedia.org/wiki/File:Toronto_Skyline_from_Ward%27s_Island_Ferry_(19745155876).jpg" target="_blank" rel="noopener">Lord of the Wings</a> — CC BY-SA 2.0</li>
+    <li><span data-i18n="credits.results">Experience photos: same authors as on the four world pages.</span></li>
+  </template>
+
+  <!-- Shared footer (rendered by js/main.js) -->
+  <div data-component="site-footer"></div>
+
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Culture — Ontario Tourism Experiences</title>
+  <meta name="description" content="Six cultural experiences in Toronto: CN Tower, Casa Loma, Nathan Phillips Square, Royal Ontario Museum, Art Gallery of Ontario and Hockey Hall of Fame." data-i18n-attr="content:meta.culture">
+  <meta name="theme-color" content="#17352B">
+
+  <!-- Early language flag (same snippet on every page) -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try {
+        var l = (location.search.match(/[?&]lang=(es|en)/) || [])[1] || localStorage.getItem('ote-lang');
+        if (l === 'es') { d.lang = 'es'; d.classList.add('i18n-pending'); }
+      } catch (e) {}
+      setTimeout(function () { d.classList.remove('i18n-pending'); }, 1500);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="preload" as="image" href="images/culture/hero-toronto-skyline-night.webp" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/language.js" defer></script>
+  <script src="js/worlds-i18n.js" defer></script>
+  <script src="js/experiences.js" defer></script>
+  <script src="js/favourites.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body id="top" data-page="culture" data-page-title="title.culture" data-nav="transparent">
+
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+  <!-- Shared header (rendered by js/main.js) -->
+  <div data-component="site-header"></div>
+
+  <noscript><p class="noscript">This experience needs JavaScript enabled. / Esta experiencia necesita JavaScript activado.</p></noscript>
+
+  <main id="main">
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero__media">
+        <img src="images/culture/hero-toronto-skyline-night.webp" width="1920" height="1280"
+             alt="Toronto skyline at night with the illuminated CN Tower, seen across the harbour from Polson Pier"
+             data-i18n-attr="alt:culture.hero.alt" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <p class="hero__eyebrow eyebrow" data-i18n="world.eyebrow" data-i18n-vars='{"n":"02"}'>World 02 of 04 · Ontario</p>
+
+        <h1 class="hero__title" id="page-title">
+          <span class="hero__word hero__word--text"><span style="--i:0" data-i18n="cat.culture">Culture</span></span>
+        </h1>
+
+        <div class="hero__row">
+          <p class="hero__tagline">
+            <span data-i18n="section.culture">Culture &amp; Iconic Places</span>
+            <em data-i18n="culture.hero.tagline">Icons. History. Art. City life.</em>
+          </p>
+          <ul class="page-stats">
+            <li><strong>06</strong><span data-i18n="world.experiences">Experiences</span></li>
+            <li><strong>02</strong><span data-i18n="world.collections">Collections</span></li>
+            <li><strong>01</strong><span data-i18n="world.regions" data-i18n-vars='{"n":1}'>Region</span></li>
+          </ul>
+          <a class="btn hero__cta" href="#landmarks">
+            <span class="btn__label"><span data-i18n="world.start">Start exploring</span></span>
+            <span class="arrow arrow--down" aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div class="hero__bottom">
+          <a class="scroll-cue" href="#intro" tabindex="-1" aria-hidden="true">
+            <span class="scroll-cue__line"></span>
+            <span data-i18n="home.hero.scroll">Scroll</span>
+          </a>
+          <nav class="crumbs" data-i18n-attr="aria-label:world.crumbs">
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <span class="crumbs__sep" aria-hidden="true">/</span>
+            <span aria-current="page" data-i18n="cat.culture">Culture</span>
+          </nav>
+          <p class="photo-caption"><span data-i18n="common.photo">Photo</span> — <span data-i18n="culture.hero.caption">Toronto skyline from Polson Pier</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         INTRO
+         ===================================================== -->
+    <section class="world-intro world-intro--split" id="intro" aria-labelledby="intro-title">
+      <figure class="world-intro__media reveal-img">
+        <img src="images/home/culture-cn-tower-vertical.webp" width="900" height="1418" loading="lazy" decoding="async"
+             alt="" data-i18n-attr="alt:home.worlds.culture.shot4" data-depth="-0.06">
+        <figcaption class="photo-caption">CN Tower, Toronto</figcaption>
+      </figure>
+      <div class="world-intro__head">
+        <p class="eyebrow reveal" data-i18n="section.culture">Culture &amp; Iconic Places</p>
+        <h2 class="display-xl reveal reveal--title" style="--d:1" id="intro-title" data-i18n-html="culture.intro.title">The stories that<br><em>shape a province.</em></h2>
+      </div>
+      <div class="world-intro__body">
+        <p class="lede reveal" style="--d:2" data-i18n="culture.intro.text"></p>
+        <nav class="chapters reveal" style="--d:3" aria-labelledby="chapters-title">
+          <p class="chapters__title" id="chapters-title" data-i18n="world.chapters">Two collections</p>
+          <ol>
+            <li><a href="#landmarks"><span class="chapters__num">01</span><span data-i18n="sub.landmarks">Landmarks</span><span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="#museums-art"><span class="chapters__num">02</span><span data-i18n="sub.museums">Museums &amp; Art</span><span class="arrow" aria-hidden="true"></span></a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CONTACT SHEET — the six experiences at a glance
+         ===================================================== -->
+    <nav class="film" aria-labelledby="film-title">
+      <p class="film__title reveal" id="film-title" data-i18n="world.film">The six experiences</p>
+      <ol data-stagger>
+        <li><a href="#cn-tower"><img src="images/culture/cn-tower.webp" width="1200" height="800" loading="lazy" decoding="async" alt="" style="object-position: 30% center"><span class="film__label"><span class="film__num">01</span><span class="film__name">CN Tower</span></span></a></li>
+        <li><a href="#casa-loma"><img src="images/home/culture-casa-loma.webp" width="820" height="871" loading="lazy" decoding="async" alt=""><span class="film__label"><span class="film__num">02</span><span class="film__name">Casa Loma</span></span></a></li>
+        <li><a href="#nathan-phillips-square"><img src="images/home/culture-nathan-phillips-square.webp" width="1000" height="667" loading="lazy" decoding="async" alt=""><span class="film__label"><span class="film__num">03</span><span class="film__name">Nathan Phillips Square</span></span></a></li>
+        <li><a href="#royal-ontario-museum"><img src="images/home/culture-royal-ontario-museum.webp" width="1000" height="613" loading="lazy" decoding="async" alt=""><span class="film__label"><span class="film__num">04</span><span class="film__name">Royal Ontario Museum</span></span></a></li>
+        <li><a href="#art-gallery-of-ontario"><img src="images/culture/art-gallery-of-ontario.webp" width="1200" height="795" loading="lazy" decoding="async" alt=""><span class="film__label"><span class="film__num">05</span><span class="film__name">Art Gallery of Ontario</span></span></a></li>
+        <li><a href="#hockey-hall-of-fame"><img src="images/culture/hockey-hall-of-fame.webp" width="1920" height="1426" loading="lazy" decoding="async" alt=""><span class="film__label"><span class="film__num">06</span><span class="film__name">Hockey Hall of Fame</span></span></a></li>
+      </ol>
+    </nav>
+
+    <!-- =====================================================
+         COLLECTION 01 · LANDMARKS
+         ===================================================== -->
+    <section class="collection" id="landmarks" aria-labelledby="c1-title">
+      <header class="collection__head">
+        <figure class="collection__media reveal-img">
+          <img src="images/culture/opener-toronto-skyline.webp" width="1920" height="1271" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:culture.c1.alt" data-depth="-0.08" style="object-position: center 40%">
+        </figure>
+        <p class="photo-caption collection__caption"><span data-i18n="common.photo">Photo</span> — <span data-i18n="culture.c1.caption">Toronto skyline from Centre Island</span></p>
+        <span class="collection__num" aria-hidden="true" data-depth="0.1">01</span>
+        <div class="collection__intro">
+          <p class="eyebrow reveal"><span data-i18n="world.collection">Collection</span>&nbsp;01</p>
+          <h2 class="display-lg reveal reveal--title" style="--d:1" id="c1-title" data-i18n="sub.landmarks">Landmarks</h2>
+          <p class="lede reveal" style="--d:2" data-i18n="culture.c1.lede"></p>
+        </div>
+        <nav class="collection__list reveal" style="--d:3" aria-labelledby="c1-list">
+          <p class="chapters__title" id="c1-list" data-i18n="world.inCollection">In this collection</p>
+          <ol data-stagger>
+            <li><a href="#cn-tower"><span class="collection__list-num">01</span>CN Tower<span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="#casa-loma"><span class="collection__list-num">02</span>Casa Loma<span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="#nathan-phillips-square"><span class="collection__list-num">03</span>Nathan Phillips Square<span class="arrow" aria-hidden="true"></span></a></li>
+          </ol>
+        </nav>
+      </header>
+
+      <!-- 01 CN Tower -->
+      <article class="exp exp--c" id="cn-tower" aria-labelledby="exp-cn-tower">
+        <figure class="exp__media reveal-img">
+          <img src="images/culture/cn-tower.webp" width="1200" height="800" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.cntower.alt" data-depth="-0.05" style="object-position: 30% center">
+        </figure>
+        <figure class="world__shot reveal-img" style="--x: 56%; --b: -110px; --w: 26vw; --ar: 3 / 2; --d: 2" data-depth="0.06">
+          <img src="images/culture/cn-tower-pod.webp" width="900" height="603" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.cntower.detailAlt">
+          <figcaption class="world__shot-cap" data-i18n="exp.cntower.detailCap">Main pod · 342 m</figcaption>
+        </figure>
+        <span class="exp__num" aria-hidden="true" data-depth="0.1">01</span>
+        <div class="exp__body reveal">
+          <p class="exp__meta"><span class="exp__index">01</span><span data-i18n="sub.landmarks">Landmarks</span></p>
+          <h3 class="exp__title" id="exp-cn-tower">CN Tower</h3>
+          <p class="exp__place">Toronto, Ontario</p>
+          <p class="exp__text" data-i18n="exp.cntower.text"></p>
+          <p class="exp__why"><span class="exp__why-label" data-i18n="world.why">Why go</span><span class="exp__why-text" data-i18n="exp.cntower.why"></span></p>
+          <dl class="exp__facts">
+            <div><dt data-i18n="world.region">Region</dt><dd data-i18n="region.torontoShort"></dd></div>
+            <div><dt data-i18n="world.category">Category</dt><dd data-i18n="cat.culture"></dd></div>
+            <div><dt data-i18n="world.admission">Admission</dt><dd><a class="exp__price" href="https://www.cntower.ca/plan-your-visit/tickets-and-hours/tickets" target="_blank" rel="noopener" data-i18n="price.cntower"></a></dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- 02 Casa Loma -->
+      <article class="exp exp--b" id="casa-loma" aria-labelledby="exp-casa-loma">
+        <figure class="exp__media reveal-img">
+          <img src="images/home/culture-casa-loma.webp" width="820" height="871" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.culture.shot2" data-depth="-0.05">
+        </figure>
+        <figure class="world__shot reveal-img" style="--x: 46%; --b: -60px; --w: 19vw; --ar: 3 / 2; --d: 2" data-depth="0.06">
+          <img src="images/culture/casa-loma-great-hall.webp" width="800" height="533" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.casaloma.detailAlt">
+          <figcaption class="world__shot-cap" data-i18n="exp.casaloma.detailCap">Great Hall</figcaption>
+        </figure>
+        <span class="exp__num" aria-hidden="true" data-depth="0.1">02</span>
+        <div class="exp__body reveal">
+          <p class="exp__meta"><span class="exp__index">02</span><span data-i18n="sub.landmarks">Landmarks</span></p>
+          <h3 class="exp__title" id="exp-casa-loma">Casa Loma</h3>
+          <p class="exp__place">Toronto, Ontario</p>
+          <p class="exp__text" data-i18n="exp.casaloma.text"></p>
+          <p class="exp__why"><span class="exp__why-label" data-i18n="world.why">Why go</span><span class="exp__why-text" data-i18n="exp.casaloma.why"></span></p>
+          <dl class="exp__facts">
+            <div><dt data-i18n="world.region">Region</dt><dd data-i18n="region.torontoShort"></dd></div>
+            <div><dt data-i18n="world.category">Category</dt><dd data-i18n="cat.culture"></dd></div>
+            <div><dt data-i18n="world.admission">Admission</dt><dd><a class="exp__price" href="https://casaloma.ca/plan-your-visit-2/" target="_blank" rel="noopener" data-i18n="price.casaloma"></a></dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- 03 Nathan Phillips Square -->
+      <article class="exp exp--pano exp--pano-right" id="nathan-phillips-square" aria-labelledby="exp-nathan-phillips">
+        <figure class="exp__media reveal-img">
+          <img src="images/culture/nathan-phillips-square-panorama.webp" width="1920" height="881" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.nathan.panoAlt" data-depth="-0.05">
+          <figcaption class="exp__caption">Nathan Phillips Square · Old City Hall</figcaption>
+        </figure>
+        <figure class="world__shot reveal-img" style="--x: 8%; --b: -40px; --w: 20vw; --ar: 3 / 2; --d: 2" data-depth="0.07">
+          <img src="images/home/culture-nathan-phillips-square.webp" width="1000" height="667" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.culture.shot1">
+          <figcaption class="world__shot-cap" data-i18n="exp.nathan.signCap">TORONTO sign</figcaption>
+        </figure>
+        <span class="exp__num" aria-hidden="true" data-depth="0.12">03</span>
+        <div class="exp__body reveal">
+          <p class="exp__meta"><span class="exp__index">03</span><span data-i18n="sub.landmarks">Landmarks</span></p>
+          <h3 class="exp__title" id="exp-nathan-phillips">Nathan Phillips Square</h3>
+          <p class="exp__place">Toronto, Ontario</p>
+          <p class="exp__text" data-i18n="exp.nathan.text"></p>
+          <p class="exp__why"><span class="exp__why-label" data-i18n="world.why">Why go</span><span class="exp__why-text" data-i18n="exp.nathan.why"></span></p>
+          <dl class="exp__facts">
+            <div><dt data-i18n="world.region">Region</dt><dd data-i18n="region.torontoShort"></dd></div>
+            <div><dt data-i18n="world.category">Category</dt><dd data-i18n="cat.culture"></dd></div>
+          </dl>
+        </div>
+      </article>
+    </section>
+
+    <!-- =====================================================
+         COLLECTION 02 · MUSEUMS & ART
+         ===================================================== -->
+    <section class="collection collection--alt" id="museums-art" aria-labelledby="c2-title">
+      <header class="collection__head">
+        <figure class="collection__media reveal-img">
+          <img src="images/culture/opener-rom-dinosaurs.webp" width="1920" height="1082" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:culture.c2.alt" data-depth="-0.08" style="object-position: center 80%">
+        </figure>
+        <p class="photo-caption collection__caption"><span data-i18n="common.photo">Photo</span> — Royal Ontario Museum · Barosaurus</p>
+        <span class="collection__num" aria-hidden="true" data-depth="0.1">02</span>
+        <div class="collection__intro">
+          <p class="eyebrow reveal"><span data-i18n="world.collection">Collection</span>&nbsp;02</p>
+          <h2 class="display-lg reveal reveal--title" style="--d:1" id="c2-title" data-i18n="sub.museums">Museums &amp; Art</h2>
+          <p class="lede reveal" style="--d:2" data-i18n="culture.c2.lede"></p>
+        </div>
+        <nav class="collection__list reveal" style="--d:3" aria-labelledby="c2-list">
+          <p class="chapters__title" id="c2-list" data-i18n="world.inCollection">In this collection</p>
+          <ol data-stagger>
+            <li><a href="#royal-ontario-museum"><span class="collection__list-num">04</span>Royal Ontario Museum<span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="#art-gallery-of-ontario"><span class="collection__list-num">05</span>Art Gallery of Ontario<span class="arrow" aria-hidden="true"></span></a></li>
+            <li><a href="#hockey-hall-of-fame"><span class="collection__list-num">06</span>Hockey Hall of Fame<span class="arrow" aria-hidden="true"></span></a></li>
+          </ol>
+        </nav>
+      </header>
+
+      <!-- 04 Royal Ontario Museum -->
+      <article class="exp exp--a-flip" id="royal-ontario-museum" aria-labelledby="exp-rom">
+        <figure class="exp__media reveal-img">
+          <img src="images/home/culture-royal-ontario-museum.webp" width="1000" height="613" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:home.worlds.culture.shot3" data-depth="-0.05">
+          <figcaption class="exp__caption">Michael Lee-Chin Crystal</figcaption>
+        </figure>
+        <figure class="world__shot reveal-img" style="--x: 48%; --b: -70px; --w: 17vw; --ar: 3 / 2; --d: 2" data-depth="0.06">
+          <img src="images/culture/rom-crystal-staircase.webp" width="800" height="533" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.rom.detailAlt">
+        </figure>
+        <span class="exp__num" aria-hidden="true" data-depth="0.12">04</span>
+        <div class="exp__body reveal">
+          <p class="exp__meta"><span class="exp__index">04</span><span data-i18n="sub.museums">Museums &amp; Art</span></p>
+          <h3 class="exp__title" id="exp-rom">Royal Ontario Museum</h3>
+          <p class="exp__place">Toronto, Ontario</p>
+          <p class="exp__text" data-i18n="exp.rom.text"></p>
+          <p class="exp__why"><span class="exp__why-label" data-i18n="world.why">Why go</span><span class="exp__why-text" data-i18n="exp.rom.why"></span></p>
+          <dl class="exp__facts">
+            <div><dt data-i18n="world.region">Region</dt><dd data-i18n="region.torontoShort"></dd></div>
+            <div><dt data-i18n="world.category">Category</dt><dd data-i18n="cat.culture"></dd></div>
+            <div><dt data-i18n="world.admission">Admission</dt><dd><a class="exp__price" href="https://www.rom.on.ca/visit/visitor-information" target="_blank" rel="noopener" data-i18n="price.check"></a></dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- 05 Art Gallery of Ontario -->
+      <article class="exp exp--b-flip" id="art-gallery-of-ontario" aria-labelledby="exp-ago">
+        <figure class="exp__media reveal-img">
+          <img src="images/culture/art-gallery-of-ontario.webp" width="1200" height="795" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.ago.alt" data-depth="-0.05">
+          <figcaption class="exp__caption">Galleria Italia</figcaption>
+        </figure>
+        <span class="exp__num" aria-hidden="true" data-depth="0.1">05</span>
+        <div class="exp__body reveal">
+          <p class="exp__meta"><span class="exp__index">05</span><span data-i18n="sub.museums">Museums &amp; Art</span></p>
+          <h3 class="exp__title" id="exp-ago">Art Gallery of Ontario</h3>
+          <p class="exp__place">Toronto, Ontario</p>
+          <p class="exp__text" data-i18n="exp.ago.text"></p>
+          <p class="exp__why"><span class="exp__why-label" data-i18n="world.why">Why go</span><span class="exp__why-text" data-i18n="exp.ago.why"></span></p>
+          <dl class="exp__facts">
+            <div><dt data-i18n="world.region">Region</dt><dd data-i18n="region.torontoShort"></dd></div>
+            <div><dt data-i18n="world.category">Category</dt><dd data-i18n="cat.culture"></dd></div>
+            <div><dt data-i18n="world.admission">Admission</dt><dd><a class="exp__price" href="https://ago.ca/visit" target="_blank" rel="noopener" data-i18n="price.check"></a></dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <!-- 06 Hockey Hall of Fame -->
+      <article class="exp exp--cine" id="hockey-hall-of-fame" aria-labelledby="exp-hhof">
+        <figure class="exp__media reveal-img">
+          <img src="images/culture/hockey-hall-of-fame.webp" width="1920" height="1426" loading="lazy" decoding="async"
+               alt="" data-i18n-attr="alt:exp.hhof.alt" data-depth="-0.05" style="object-position: 70% center">
+          <figcaption class="exp__caption">Yonge St &amp; Front St</figcaption>
+        </figure>
+        <span class="exp__num" aria-hidden="true" data-depth="0.1">06</span>
+        <div class="exp__body reveal">
+          <p class="exp__meta"><span class="exp__index">06</span><span data-i18n="sub.museums">Museums &amp; Art</span></p>
+          <h3 class="exp__title" id="exp-hhof">Hockey Hall of Fame</h3>
+          <p class="exp__place">Toronto, Ontario</p>
+          <p class="exp__text" data-i18n="exp.hhof.text"></p>
+          <p class="exp__why"><span class="exp__why-label" data-i18n="world.why">Why go</span><span class="exp__why-text" data-i18n="exp.hhof.why"></span></p>
+          <dl class="exp__facts">
+            <div><dt data-i18n="world.region">Region</dt><dd data-i18n="region.torontoShort"></dd></div>
+            <div><dt data-i18n="world.category">Category</dt><dd data-i18n="cat.culture"></dd></div>
+            <div><dt data-i18n="world.admission">Admission</dt><dd><a class="exp__price" href="https://www.hhof.com/visit/ticketsandhours.html" target="_blank" rel="noopener" data-i18n="price.hhof"></a></dd></div>
+          </dl>
+        </div>
+      </article>
+    </section>
+
+    <p class="prices-note reveal" data-i18n="world.pricesNote"></p>
+
+    <!-- =====================================================
+         NEXT WORLD
+         ===================================================== -->
+    <section class="world-next" aria-labelledby="next-title">
+      <a class="world-next__link" href="food.html">
+        <p class="eyebrow eyebrow--accent reveal"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="world.next">Next world</span>&nbsp;· 03</p>
+        <h2 class="world-next__title reveal reveal--title" style="--d:1" id="next-title"><span data-i18n="cat.flavours">Flavours</span><span class="arrow" aria-hidden="true"></span></h2>
+        <p class="world-next__sub reveal" style="--d:2" data-i18n="section.food">Food &amp; Local Experiences</p>
+      </a>
+      <figure class="world-next__media reveal-img">
+        <img src="images/home/flavours-st-lawrence-market.webp" width="1600" height="1094" loading="lazy" decoding="async"
+             alt="" data-i18n-attr="alt:home.worlds.flavours.alt" style="object-position: 60% center">
+      </figure>
+      <nav class="worlds-nav" aria-labelledby="worlds-nav-title">
+        <p class="worlds-nav__title" id="worlds-nav-title" data-i18n="world.all">The four worlds</p>
+        <ol>
+          <li><a href="nature.html"><span>01</span><span data-i18n="nav.nature">Nature</span></a></li>
+          <li><a href="culture.html" aria-current="page"><span>02</span><span data-i18n="nav.culture">Culture</span></a></li>
+          <li><a href="food.html"><span>03</span><span data-i18n="nav.flavours">Flavours</span></a></li>
+          <li><a href="entertainment.html"><span>04</span><span data-i18n="nav.adventure">Adventure</span></a></li>
+        </ol>
+        <a class="link-arrow" href="index.html"><span data-i18n="world.back">Back to Home</span><span class="arrow" aria-hidden="true"></span></a>
+      </nav>
+    </section>
+
+  </main>
+
+  <!-- Photo credits for this page (inserted into the footer) -->
+  <template id="page-credits">
+    <li><a href="https://commons.wikimedia.org/wiki/File:Toronto_Skyline_from_Polson_Pier_(5461949752).jpg" target="_blank" rel="noopener">Allen McGregor</a> — CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:CN_Tower,_Toronto,_Canada_(Unsplash_DJ_kOgH5u0o).jpg" target="_blank" rel="noopener">Scott Webb</a> — CC0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Casa_Loma_Toronto,_Canada.jpg" target="_blank" rel="noopener">Bintyamin20248</a> — CC0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Nathan_Philips_Square_Toronto.jpg" target="_blank" rel="noopener">Kevin Mullarkey</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Royal_Ontario_Museum_in_Fall_2021.jpg" target="_blank" rel="noopener">Maksim Sokolov</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Art_Gallery_of_Ontario_(38661357472).jpg" target="_blank" rel="noopener">Jeff Hitchcock</a> — CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Hockey_Hall_of_Fame_summer_2022.jpg" target="_blank" rel="noopener">Adam Bishop</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:St_Lawrence_Market_Toronto_2010.jpg" target="_blank" rel="noopener">Alexandre Moreau</a> — CC BY-SA 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Toronto_-_ON_-_CN_Tower_Turmkorb.jpg" target="_blank" rel="noopener">Wladyslaw</a> — CC BY 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Toronto_on_a_summer_day.jpg" target="_blank" rel="noopener">Benson Kua</a> — CC BY-SA 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Great_Hall_of_Casa_Loma,_September_27_2025_(02).jpg" target="_blank" rel="noopener">Dillan Payne</a> — CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Nathan_Phillips_square_-_Toronto.jpg" target="_blank" rel="noopener">Paolo Costa Baldi</a> — CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Barosaurus,_Royal_Ontario_Museum,_side.jpg" target="_blank" rel="noopener">KristyVan</a> — CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Staircase_of_the_Michael_Lee-Chin_Crystal.jpg" target="_blank" rel="noopener">Maksim Sokolov</a> — CC BY-SA 4.0</li>
+  </template>
+
+  <!-- Shared footer (rendered by js/main.js) -->
+  <div data-component="site-footer"></div>
+
+</body>
+</html>
