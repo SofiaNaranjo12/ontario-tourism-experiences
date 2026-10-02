@@ -41,6 +41,7 @@
       /* Navigation */
       'nav.label': 'Main navigation',
       'nav.skip': 'Skip to content',
+      'nav.menu': 'Menu',
       'nav.homeLabel': 'Ontario Tourism Experiences — Home',
       'nav.home': 'Home',
       'nav.nature': 'Nature',
@@ -270,6 +271,7 @@
       /* Navegación */
       'nav.label': 'Navegación principal',
       'nav.skip': 'Saltar al contenido',
+      'nav.menu': 'Menú',
       'nav.homeLabel': 'Experiencias Turísticas de Ontario — Inicio',
       'nav.home': 'Inicio',
       'nav.nature': 'Naturaleza',

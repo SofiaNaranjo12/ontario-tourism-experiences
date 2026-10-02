@@ -377,11 +377,16 @@
     else map.flyToBounds(bounds, Object.assign({ duration: 0.9 }, opts));
   }
 
+  // Wide screens: the card floats over the map. Tablets and phones
+  // (style.css 99.5): it sits under the map and the list is not a
+  // scroll box of its own.
+  const cardFloats = () => window.getComputedStyle(els.card).position === 'absolute';
+
   // Centre the experience in the part of the map not covered by the card
   function flyTo(e) {
     if (!map) return;
     const zoom = Math.max(map.getZoom(), e.region === 'toronto' ? 13 : 10.5);
-    const cardW = els.card.offsetWidth || 0;
+    const cardW = cardFloats() ? els.card.offsetWidth || 0 : 0;
     const point = map.project([e.lat, e.lng], zoom).subtract([cardW / 2, 0]);
     const target = map.unproject(point, zoom);
     if (reduceMotion) map.setView(target, zoom);
@@ -416,8 +421,14 @@
     renderMarkers();
     flyTo(e);
     writeUrl();
-    const li = els.list.querySelector(`[data-row="${e.id}"]`);
-    if (li && opts.from !== 'list') li.scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
+    const smooth = reduceMotion ? 'auto' : 'smooth';
+    if (cardFloats()) {
+      const li = els.list.querySelector(`[data-row="${e.id}"]`);
+      if (li && opts.from !== 'list') li.scrollIntoView({ block: 'nearest', behavior: smooth });
+    } else if (opts.from !== 'map') {
+      // Chosen in the list or in "Nearby": bring the map and its card into view
+      els.map.scrollIntoView({ block: 'start', behavior: smooth });
+    }
   }
 
   function nearby(e, n) {
@@ -574,12 +585,13 @@
         flyTo(e);
       }
       const li = els.list.querySelector(`[data-row="${e.id}"]`);
-      if (li) li.scrollIntoView({ block: 'nearest' });
+      if (li && cardFloats()) li.scrollIntoView({ block: 'nearest' });
     }
     // Arriving from a link (Home, quiz): go straight to the map
     if (fromLink) {
       writeUrl();                      // keep only the state really shown
-      window.requestAnimationFrame(() => root.scrollIntoView({ behavior: 'auto', block: 'start' }));
+      const target = state.selected && !cardFloats() ? els.map : root;
+      window.requestAnimationFrame(() => target.scrollIntoView({ behavior: 'auto', block: 'start' }));
     }
   }
 

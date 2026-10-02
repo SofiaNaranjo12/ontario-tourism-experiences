@@ -27,6 +27,7 @@
   const doc = document;
   const body = doc.body;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const compactNav = window.matchMedia('(max-width: 1279px)');   // see section 99 of style.css
   const i18n = () => window.OTE_I18N;
 
   /* ---------------------------------------------------------
@@ -175,7 +176,11 @@
             <span class="brand__mark" aria-hidden="true">ONTARIO</span>
             <span class="brand__name" data-i18n="site.name"></span>
           </a>
-          <nav class="main-nav" data-i18n-attr="aria-label:nav.label">
+          <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+            <span class="nav-toggle__icon" aria-hidden="true"></span>
+            <span class="nav-toggle__label" data-i18n="nav.menu"></span>
+          </button>
+          <nav class="main-nav" id="site-nav" data-i18n-attr="aria-label:nav.label">
             <ul class="main-nav__list">${links}</ul>
           </nav>
           <a class="nav-fav" href="favourites.html" data-nav="favourites" data-i18n-attr="aria-label:nav.favourites|title:nav.favourites">
@@ -359,7 +364,7 @@
       const toggle = group.querySelector('.main-nav__toggle');
       return { group, toggle, panel: doc.getElementById(toggle.getAttribute('aria-controls')), pinned: false, timer: 0 };
     });
-    if (!menus.length) return;
+    if (!menus.length) return { closeAll() {} };
 
     const isOpen = (m) => m.toggle.getAttribute('aria-expanded') === 'true';
     const links = (m) => Array.from(m.panel.querySelectorAll('a'));
@@ -394,13 +399,15 @@
         if (go !== undefined) { e.preventDefault(); all[go].focus(); }
       });
 
+      // Hover only drives the desktop bar; in the compact panel the
+      // groups are accordions that open and close with a tap or click
       m.group.addEventListener('pointerenter', (e) => {
-        if (e.pointerType !== 'mouse') return;
+        if (e.pointerType !== 'mouse' || compactNav.matches) return;
         clearTimeout(m.timer);
         if (!isOpen(m)) setOpen(m, true);
       });
       m.group.addEventListener('pointerleave', (e) => {
-        if (e.pointerType !== 'mouse' || m.pinned || !isOpen(m)) return;
+        if (e.pointerType !== 'mouse' || compactNav.matches || m.pinned || !isOpen(m)) return;
         m.timer = setTimeout(() => {
           if (!m.panel.contains(doc.activeElement)) setOpen(m, false);   // keyboard user inside: keep
         }, HOVER_CLOSE_DELAY);
@@ -422,6 +429,46 @@
     doc.addEventListener('click', (e) => {
       menus.forEach((m) => { if (isOpen(m) && !m.group.contains(e.target)) setOpen(m, false); });
     });
+
+    return { closeAll() { menus.forEach((m) => { if (isOpen(m)) setOpen(m, false); }); } };
+  }
+
+  /* Compact navigation (below 1280px, same query as the CSS).
+     The bar keeps the brand, ♡ and ES | EN, plus a Menu button; the
+     same <nav> becomes a full-height panel under the bar, with Explore
+     and Plan as accordions. Tap / click / Enter / Space toggle it;
+     Escape or choosing a page closes it. While it is open the page
+     behind is inert (no focus, no clicks) and does not scroll. */
+  function initCompactNav(navMenus) {
+    const header = doc.getElementById('site-header');
+    const toggle = header && header.querySelector('.nav-toggle');
+    const panel = toggle && doc.getElementById(toggle.getAttribute('aria-controls'));
+    if (!panel) return;
+
+    const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
+    const behind = () => Array.from(body.children).filter((el) => el !== header && el.tagName !== 'SCRIPT' && el.tagName !== 'TEMPLATE');
+
+    function setOpen(on, returnFocus) {
+      if (on === isOpen()) return;
+      toggle.setAttribute('aria-expanded', String(on));
+      header.classList.toggle('is-nav-open', on);
+      doc.documentElement.classList.toggle('nav-locked', on);
+      behind().forEach((el) => { el.inert = on; });
+      if (!on) {
+        navMenus.closeAll();
+        if (returnFocus) toggle.focus();
+      }
+    }
+
+    toggle.addEventListener('click', () => setOpen(!isOpen()));
+    panel.addEventListener('click', (e) => { if (e.target.closest('a[href]')) setOpen(false); });
+    doc.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen()) setOpen(false, true);
+    });
+    // Back to the wide bar (rotation, resize) or back from the history cache: closed
+    const reset = () => { if (!compactNav.matches || isOpen()) setOpen(false); };
+    if (compactNav.addEventListener) compactNav.addEventListener('change', reset);
+    window.addEventListener('pageshow', reset);
   }
 
   /* Toast — explains why the link does not navigate yet */
@@ -767,7 +814,7 @@
      --------------------------------------------------------- */
   renderLayout();
   initSafeLinks();
-  initNavMenus();
+  initCompactNav(initNavMenus());
   initToast();
   initReveal();
   initScrollEngine();

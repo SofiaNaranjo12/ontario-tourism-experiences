@@ -5,7 +5,13 @@ Static site: HTML5 + CSS3 + vanilla JavaScript. Designed for GitHub Pages.
 
 **Current stage:** 12 pages — Home, the four world pages (24 experiences), Find Your Ontario
 (quiz), Explore Map, Plan Your Trip, Ontario by Season, My Favourites, Travel Guide and
-Credits & References. Desktop only (≥ 1280px).
+Credits & References.
+
+**Responsive:** desktop (designed for ≥ 1280px), tablet and mobile. Below 1280px the
+header becomes a compact bar with a Menu panel; below 1200px the compositions become
+vertical editorial sequences for tablets and phones (section 99 of `css/style.css`,
+media queries only, so the desktop design is unchanged). Tested by viewport emulation
+in Chrome (360–1920px, EN and ES); not yet tested on physical devices.
 
 Each page answers one question: the worlds say **what** each place is · the quiz says **which**
 experience fits you · the map says **where** · seasons say **when** · the planner says **how** to
