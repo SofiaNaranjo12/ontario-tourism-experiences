@@ -13,7 +13,8 @@
    - Every change fires "favouriteschange" on document, and other
      open tabs are kept in sync through the "storage" event.
    - World pages: a discreet button is added to each experience
-     (article.exp) automatically, next to its facts.
+     (article.exp) automatically, next to its facts, with a
+     "View on map" link (map.html?experience=<id>).
    ========================================================= */
 
 (function () {
@@ -181,7 +182,8 @@
     doc.querySelectorAll('article.exp[id] .exp__body').forEach((bodyEl) => {
       const e = DATA.find(bodyEl.closest('article').id);
       if (!e || bodyEl.querySelector('[data-fav]')) return;
-      bodyEl.insertAdjacentHTML('beforeend', `<div class="exp__save">${button(e)}</div>`);
+      // ♡ Save + a direct link that opens this experience on the Explore Map
+      bodyEl.insertAdjacentHTML('beforeend', `<div class="exp__save">${button(e)}<a class="link-arrow exp__map" href="map.html?experience=${e.id}"><span data-i18n="exp.viewMap">${t('exp.viewMap')}</span><span class="map-pin-icon" aria-hidden="true"></span></a></div>`);
     });
   }
 

@@ -262,7 +262,7 @@ section[id] { scroll-margin-top: var(--nav-h-solid); }
 
 /* Primary button: maple, with a sweeping fill on hover */
 .btn {
-  --btn-bg: var(--c-maple);
+  --btn-bg: var(--c-maple-deep);   /* ivory on maple was 3.9:1; deep maple gives 5.4:1 (WCAG AA) */
   --btn-fg: var(--c-ivory);
   --btn-hover-bg: var(--c-forest);
   --btn-hover-fg: var(--c-ivory);
@@ -6536,4 +6536,224 @@ section[id] { scroll-margin-top: var(--nav-h-solid); }
 @media (min-width: 1200px) and (max-width: 1279px) {
   .hero__bottom { column-gap: 40px; }
   .hero__bottom .photo-caption { max-width: 24em; text-align: right; line-height: 1.6; }
+}
+
+
+/* =========================================================
+   100. PEER-REVIEW FIXES (Phase 3)
+   Small, local corrections from the peer evaluation. They come
+   last so they refine the rules above without rewriting them.
+   ========================================================= */
+
+/* --- Headings: nothing overlaps them on small screens --- */
+@media (max-width: 1199px) {
+  /* Planner: the 01 02 03 05 07 route sat on top of the eyebrow
+     and the title; it now has its own line above them */
+  .planner-intro__route {
+    position: relative;
+    top: auto;
+    justify-content: flex-end;
+    margin-bottom: 52px;
+  }
+}
+@media (max-width: 767px) {
+  /* Seasons: room for the two-line photo credit above the content,
+     so it no longer collides with the eyebrow on short screens */
+  .season-hero { padding-top: calc(var(--nav-h) + 84px); }
+}
+
+/* --- Contrast of text on photos --- */
+/* Transparent header: a soft shade behind the menu, only while it
+   floats over the opening photo (the solid bar already has one) */
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 -48px;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(15, 38, 31, 0.78) 0%, rgba(15, 38, 31, 0.55) 50%, rgba(15, 38, 31, 0) 100%);
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+.site-header.is-solid::before,
+.site-header.is-nav-open::before { opacity: 0; }
+.site-header:not(.is-solid) .site-header__inner { text-shadow: 0 1px 12px rgba(15, 38, 31, 0.5); }
+/* The language not in use was too faint on photos (0.5); the active
+   one keeps full opacity and its maple underline */
+.site-header .lang-switch__btn { opacity: 0.88; }
+.site-header .brand__name { opacity: 0.9; }    /* 9.5px: 0.72 fell under 4.5:1 on bright skies */
+.is-switching .site-header .brand__name { opacity: 0.15; }   /* keep the language cross-fade */
+.site-header .lang-switch__btn:hover,
+.site-header .lang-switch__btn.is-active { opacity: 1; }
+
+/* Seasons: bright skies (clouds, snow) under the credit and the name */
+.season-hero__shade {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--season-deep) 55%, transparent) 0%, transparent 34%),
+    linear-gradient(0deg, var(--season-deep) 0%, color-mix(in srgb, var(--season-deep) 70%, transparent) 38%, transparent 72%),
+    linear-gradient(90deg, color-mix(in srgb, var(--season-deep) 75%, transparent) 0%, transparent 60%);
+}
+.season-hero__caption,
+.season-hero__name { text-shadow: 0 2px 18px rgba(15, 20, 18, 0.45); }
+
+/* Home + world openers on tablet/mobile: the text block sits higher
+   on the photo, so the bottom shade reaches higher too */
+@media (max-width: 1199px) {
+  .hero__shade {
+    background:
+      linear-gradient(180deg, rgba(15, 38, 31, 0.6) 0%, rgba(15, 38, 31, 0) 24%),
+      linear-gradient(0deg, rgba(23, 26, 24, 0.92) 0%, rgba(23, 26, 24, 0.66) 42%, rgba(23, 26, 24, 0.2) 76%, rgba(23, 26, 24, 0) 92%);
+  }
+  .hero__inner { text-shadow: 0 1px 14px rgba(15, 20, 18, 0.5); }
+}
+@media (max-width: 767px) {
+  .hero__shade {
+    background:
+      linear-gradient(180deg, rgba(15, 38, 31, 0.6) 0%, rgba(15, 38, 31, 0) 24%),
+      linear-gradient(0deg, rgba(23, 26, 24, 0.92) 0%, rgba(23, 26, 24, 0.74) 46%, rgba(23, 26, 24, 0.36) 74%, rgba(23, 26, 24, 0) 92%);
+  }
+  .hero__tagline { text-shadow: 0 1px 4px rgba(15, 20, 18, 0.55), 0 2px 18px rgba(15, 20, 18, 0.5); }
+}
+
+/* Home · Find Your Ontario: the photo behind the text is shaded
+   where the text sits (left on desktop, top on mobile) */
+.fyo__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(23, 26, 24, 0.7) 0%, rgba(23, 26, 24, 0.25) 55%, rgba(23, 26, 24, 0) 80%);
+}
+.fyo__content { text-shadow: 0 1px 14px rgba(15, 20, 18, 0.55); }
+@media (max-width: 1199px) {
+  .fyo__bg::after { background: linear-gradient(180deg, rgba(23, 26, 24, 0.62) 0%, rgba(23, 26, 24, 0.42) 60%, rgba(23, 26, 24, 0.2) 100%); }
+}
+
+/* World pages · cinematic experiences: small labels a bit stronger */
+@media (min-width: 1200px) {           /* below 1200px the text already sits on a dark band */
+  .exp--cine .exp__media::after {
+    background:
+      linear-gradient(90deg, rgba(15, 38, 31, 0.94) 0%, rgba(15, 38, 31, 0.8) 38%, rgba(15, 38, 31, 0) 72%),
+      linear-gradient(0deg, rgba(23, 26, 24, 0.55) 0%, rgba(23, 26, 24, 0) 40%);
+  }
+}
+.exp--cine .exp__meta,
+.exp--cine .exp__facts dt { color: rgba(244, 240, 232, 0.78); }
+
+/* --- Find Your Ontario · "You may also like" --- */
+/* The text column may shrink (1fr kept its min-content width and
+   pushed Explore · Map · ♡ out of the card on 1200–1599px), and the
+   links wrap the same way in both cards, always at the bottom */
+@media (min-width: 768px) {
+  .quiz-alt { grid-template-columns: 44% minmax(0, 1fr); }  /* mobile keeps its stacked card */
+}
+.quiz-alt__body { min-width: 0; }
+.quiz-alt__links { flex-wrap: wrap; row-gap: 4px; }
+@media (min-width: 1200px) and (max-width: 1599px) {
+  /* Title on its own row, the two cards share the full width */
+  .quiz-alts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quiz-alts__head { grid-column: 1 / -1; }
+}
+
+/* --- World pages: "View on map" next to ♡ Save --- */
+.exp__save {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 30px;
+}
+.exp--a-flip .exp__map:hover,
+.exp--cine .exp__map:hover { color: var(--c-maple-light); }
+
+/* --- Contrast of small text on flat backgrounds (WCAG AA 4.5:1) --- */
+/* Maple text on ivory/paper was 3.5–3.9:1: small labels and numbers
+   use the deep maple of the palette (5.4:1 on ivory, 4.9:1 on paper).
+   Dark variants (a-flip, cine, adventure, selected row) keep their
+   own lighter colour through their more specific rules. */
+.exp__index,
+.exp__why-label,
+.chapters__num,
+.world__index,
+.atlas-row__num { color: var(--c-maple-deep); }
+.skip-link { background: var(--c-maple-deep); }
+/* Lake blue on ivory/paper was 3.6–4.0:1: one step deeper (5.3:1 / 4.7:1) */
+.exp__place,
+.world__subtitle,
+.world__subs-num { color: #47696F; }
+/* Map: the count next to each filter, a little less faded */
+.atlas-chip__n { opacity: 0.72; }
+/* Travel guide: "far" cells were 3.5:1 on their tinted background */
+.guide-matrix td.is-far { color: rgba(244, 240, 232, 0.64); }
+
+/* --- Contrast of small text on dark photos --- */
+/* Light maple (labels, numbers, accent eyebrows on dark): a touch
+   lighter, 5.7:1 on forest instead of 4.8:1, so textured photos and
+   shades no longer pull it under 4.5:1 */
+:root { --c-maple-light: #E8957F; }
+/* Home · The concept: on tall screens the eyebrow sat where the shade
+   had faded to 15%; it now fades more gradually */
+@media (min-width: 1200px) {
+  .concept__stage::after {
+    background: linear-gradient(0deg, rgba(15, 38, 31, 0.95) 0%, rgba(15, 38, 31, 0.76) 30%, rgba(15, 38, 31, 0.55) 52%, rgba(15, 38, 31, 0.25) 74%, rgba(15, 38, 31, 0) 100%);
+  }
+}
+/* Home · Find Your Ontario: body text a little stronger on the photo */
+.fyo__text { color: rgba(244, 240, 232, 0.88); }
+
+/* --- Find Your Ontario · "You may also like" on desktop --- */
+/* Explore · Map · ♡ need about 303px; the text column now keeps at
+   least 360px (the photo gives way a little), so the three stay on
+   one row like in the original design instead of ♡ dropping below */
+@media (min-width: 1200px) {
+  .quiz-alt { grid-template-columns: minmax(0, 44%) minmax(min(100%, 360px), 1fr); }
+}
+
+/* Home · The concept: the two photo credits sit under the section
+   shade, which dims text and sky alike, so on the bright Bruce
+   Peninsula sky the credit almost vanished. A soft local shade between
+   each photo and its credit, and the credit at full strength */
+.concept__half::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: min(55%, 420px);
+  background: linear-gradient(180deg, rgba(15, 38, 31, 0.82) 0%, rgba(15, 38, 31, 0.6) 40%, rgba(15, 38, 31, 0) 100%);
+  pointer-events: none;
+}
+.concept__half figcaption { opacity: 1; }
+/* ...and the section shade no longer darkens the top edge (where the
+   credits are): the local shade above already does it, under the text */
+@media (max-width: 1199px) {
+  .concept__stage::after { background: linear-gradient(0deg, var(--c-forest-deep) 0%, rgba(15, 38, 31, 0.6) 24%, rgba(15, 38, 31, 0) 52%); }
+}
+
+/* Home · Six regions: the shade under the number and name reaches a
+   little higher (city lights and bright skies sat behind the 01–06) */
+.regions__list li::after {
+  background: linear-gradient(0deg, rgba(15, 38, 31, 0.92) 0%, rgba(15, 38, 31, 0.68) 30%, rgba(15, 38, 31, 0.25) 60%, rgba(15, 38, 31, 0.05) 100%);
+}
+@media (max-width: 767px) {           /* short tiles: the number sits higher */
+  .regions__list li::after {
+    background: linear-gradient(0deg, rgba(15, 38, 31, 0.92) 0%, rgba(15, 38, 31, 0.76) 45%, rgba(15, 38, 31, 0.3) 75%, rgba(15, 38, 31, 0.05) 100%);
+  }
+}
+
+/* --- Plan Your Trip · intro on desktop (≥ 1200px) --- */
+/* The 01 02 03 05 07 route floated over the section and, on screens
+   up to ~800px tall, the text block (anchored at the bottom) rose
+   under it. The route now has its own row at the top right, where it
+   always was; the text stays at the bottom while there is room and
+   simply sits below the route when there is not. */
+@media (min-width: 1200px) {
+  .planner-intro { grid-template-rows: auto 1fr auto; }
+  .planner-intro__route {
+    position: relative;
+    top: auto;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    justify-self: end;
+    align-self: start;
+    margin: 2vh 0 56px;               /* 56px: room for the road and its stops */
+  }
+  .planner-intro .quiz-intro__head,
+  .planner-intro .quiz-intro__body { grid-row: 2; }
+  .planner-intro .quiz-intro__caption { grid-row: 3; }
 }
